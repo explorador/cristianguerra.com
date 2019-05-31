@@ -15,6 +15,18 @@ const MainMenuWrapper = styled.ul`
 		padding-left: 1em;
 		text-decoration: none;
 	}
+
+	li:first-child {
+		a {
+			padding-left: 0;
+		}
+	}
+
+	li:last-child {
+		a {
+			padding-right: 0;
+		}
+	}
 `
 
 /**
@@ -34,8 +46,8 @@ const NavMenuItem = props => (
 /**
  * MainMenu Component
  */
-const MainMenu = () => (
-	<MainMenuWrapper>
+const MainMenu = props => (
+	<MainMenuWrapper style={props.style}>
 		<NavMenuItem to="/blog">Blog</NavMenuItem>
 		<NavMenuItem to="/about">About Me</NavMenuItem>
 		<NavMenuItem to="/contact">Contact</NavMenuItem>
