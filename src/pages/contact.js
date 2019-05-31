@@ -4,14 +4,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
 
-const NotFoundPage = () => (
+export default () => (
 	<Layout>
-		<SEO title="404: Not found" />
+		<SEO title="Contact" />
 		<Container>
-			<h1>NOT FOUND</h1>
-			<p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+			<h1>Contact</h1>
+			<p>Contact Page</p>
 		</Container>
 	</Layout>
 )
-
-export default NotFoundPage
