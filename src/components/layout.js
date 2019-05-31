@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Container from "./container"
 import styled from "styled-components"
 import Header from "./header"
-import "./layout.scss"
+import "../scss/global.scss"
 
 /**
  * Styles for site wrapper div.
