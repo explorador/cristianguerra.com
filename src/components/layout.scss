@@ -1,0 +1,64 @@
+@import "normalize";
+
+/*=============================================
+= Colors
+=============================================*/
+
+/**
+ * Symbology:
+ *
+ * l = light
+ * lx = lighter
+ * d = dark
+ * dx = darker
+ */
+
+$black:             #151313;
+$red:               #f33;
+$red-l:             #f55f44;
+$gray:              #535461;
+$white:             #fff;
+$primary-color:     $red;
+$primery-color-l:   $red-l;
+
+
+/*=============================================
+= Main Structure
+=============================================*/
+
+html {
+	font-family: sans-serif;
+	text-size-adjust: 100%;
+
+	@media only screen and (max-width: 480px) {
+		html {
+			font-size: 100%;
+		}
+	}
+}
+
+body {
+	background: $black;
+	color: $white;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "kern", "liga", "clig", "calt";
+	font-kerning: normal;
+}
+
+
+/*=============================================
+= Typography
+=============================================*/
+
+a {
+	color: inherit;
+	-webkit-text-decoration-skip: objects;
+}
+
+// Headings h1-h6.
+@for $h from 1 through 6 {
+	h#{$h} {
+		text-rendering: optimizeLegibility;
+	}
+}
