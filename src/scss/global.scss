@@ -3,13 +3,33 @@
  *
  * Note: "styled-components" is being used in this site.
  * This file is ONLY for global styles (body, html and typography elements)
- * @ref: https://www.styled-components.com/docs
+ * See: https://www.styled-components.com/docs
  */
 
-// CSS Reset.
+ // Math Pow() for SASS: https://www.npmjs.com/package/sass-math-pow
+@import "~sass-math-pow/sass/math-pow";
+// Normalize styles.
 @import "normalize";
+// Color variables.
 @import "variables";
 
+/**
+ * Typography variables.
+ */
+// Base font size.
+$font-base-size: 19;
+// Typography Scale Ratio: https://www.modularscale.com/?19&px&1.2
+$typographyScaleRatio: 1.2;
+// Making h tags a little bit bigger.
+$headingsBase: poly-pow($typographyScaleRatio, 1) * $font-base-size; // (ratio^n)*base
+
+/**
+ * em function
+ * Converts px to em.
+ */
+@function em($pixels, $context: $font-base-size) {
+	@return #{ $pixels / $context }em;
+}
 
 /*=============================================
 = Main Structure
@@ -29,6 +49,8 @@ html {
 body {
 	background: $black;
 	color: $white;
+	font-size: #{$font-base-size}px;
+	line-height: 1.75;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: "kern", "liga", "clig", "calt";
@@ -44,9 +66,16 @@ a {
 	-webkit-text-decoration-skip: objects;
 }
 
-// Headings h1-h6.
-@for $h from 1 through 6 {
-	h#{$h} {
+/**
+ * Headings h1-h6.
+ */
+@for $n from 1 through 6 {
+	// Convert 1 to 6, 2 to 5, etc.
+	$reverseValue: 6 - $n + 1; // ArrayLength-n+1
+
+	h#{$n} {
+		font-size: em(poly-pow($typographyScaleRatio, $reverseValue) * $headingsBase); // (ratio^n)*base
+		line-height: 1.170212766;
 		text-rendering: optimizeLegibility;
 	}
 }
