@@ -35,7 +35,10 @@ module.exports = {
 			resolve: `gatsby-plugin-sass`,
 			options: {
 				implementation: require("sass"),
-				includePaths: [require("node-normalize-scss").includePaths],
+				includePaths: [
+					require("node-normalize-scss").includePaths,
+					path.resolve(__dirname, "./node_modules/sass-math-pow/sass"),
+				],
 				precision: 8,
 			},
 		},
