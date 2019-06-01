@@ -3,14 +3,15 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
+import HomeHero from "../components/home-hero"
 
 const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" />
-		<Container>
-			<h1>Hi people</h1>
-			<p>Welcome to your new Gatsby site.</p>
-			<p>Now go build something great.</p>
+		<Container mediumWidth>
+
+			<HomeHero />
+
 		</Container>
 	</Layout>
 )
