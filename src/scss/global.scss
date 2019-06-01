@@ -8,27 +8,7 @@
 
 // CSS Reset.
 @import "normalize";
-
-/*=============================================
-= Colors
-=============================================*/
-
-/**
- * Symbology:
- *
- * l = light
- * lx = lighter
- * d = dark
- * dx = darker
- */
-
-$black:             #151313;
-$red:               #f33;
-$red-l:             #f55f44;
-$gray:              #535461;
-$white:             #fff;
-$primary-color:     $red;
-$primery-color-l:   $red-l;
+@import "variables";
 
 
 /*=============================================
