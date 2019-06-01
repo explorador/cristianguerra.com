@@ -57,9 +57,17 @@ body {
 	font-kerning: normal;
 }
 
+p {
+	margin-top: 0;
+}
+
 a {
 	color: inherit;
 	-webkit-text-decoration-skip: objects;
+}
+
+.text-color-primary {
+	color: $primary-color;
 }
 
 /**
@@ -71,9 +79,14 @@ a {
 
 	h#{$n},
 	.h#{$n} {
+		margin-top: 0;
 		font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $headingsBase); // (ratio^n)*base
 		line-height: 1.170212766;
 		text-rendering: optimizeLegibility;
+	}
+
+	h#{$n} {
+		text-transform: uppercase;
 	}
 }
 
@@ -86,7 +99,8 @@ $textClasses: (
 	center: "align",
 	left: "align",
 	uppercase: "transform",
-	lowercase: "transform"
+	lowercase: "transform",
+	capitalize: "transform",
 );
 
 @each $value, $property in $textClasses {
