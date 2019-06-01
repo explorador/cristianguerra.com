@@ -2,7 +2,7 @@
  * Global styles. 💪
  *
  * Note: "styled-components" is being used in this site.
- * This file is ONLY for global styles (body, html and typography elements)
+ * This file is ONLY for typography styles
  * See: https://www.styled-components.com/docs
  */
 
@@ -20,7 +20,7 @@
 $font-base-size: 19;
 // Typography Scale Ratio: https://www.modularscale.com/?19&px&1.2
 $typographyScaleRatio: 1.2;
-// Making h tags a little bit bigger.
+// H tags "font-size" base.
 $headingsBase: poly-pow($typographyScaleRatio, 1) * $font-base-size; // (ratio^n)*base
 
 /**
@@ -32,7 +32,7 @@ $headingsBase: poly-pow($typographyScaleRatio, 1) * $font-base-size; // (ratio^n
 }
 
 /*=============================================
-= Main Structure
+= Typography
 =============================================*/
 
 html {
@@ -57,10 +57,6 @@ body {
 	font-kerning: normal;
 }
 
-/*=============================================
-= Typography
-=============================================*/
-
 a {
 	color: inherit;
 	-webkit-text-decoration-skip: objects;
@@ -71,11 +67,29 @@ a {
  */
 @for $n from 1 through 6 {
 	// Convert 1 to 6, 2 to 5, etc.
-	$reverseValue: 6 - $n + 1; // ArrayLength-n+1
+	$reverseN: 6 - $n + 1; // ArrayLength-n+1
 
-	h#{$n} {
-		font-size: em(poly-pow($typographyScaleRatio, $reverseValue) * $headingsBase); // (ratio^n)*base
+	h#{$n},
+	.h#{$n} {
+		font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $headingsBase); // (ratio^n)*base
 		line-height: 1.170212766;
 		text-rendering: optimizeLegibility;
 	}
+}
+
+/**
+ * Text-align css classes.
+ * Use: .text-right | .text-center | .text-left
+ */
+$alignClasses: right, center, left;
+
+@each $alignClass in $alignClasses {
+	.text-#{$alignClass} {
+		text-align: $alignClass;
+	}
+}
+
+// Uppercase text.
+.text-uppercase {
+	text-transform: uppercase;
 }
