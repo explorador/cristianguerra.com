@@ -7,6 +7,7 @@ import styled from "styled-components"
 
 const HeaderContainerStyled = styled(Container)`
 	display: flex;
+	align-items: center;
 	padding-top: 1em;
 	padding-bottom: 1em;
 `
@@ -18,7 +19,7 @@ const Header = ({ siteTitle }) => (
 		}}
 	>
 		<HeaderContainerStyled mediumWidth>
-			<h1 style={{ margin: 0 }}>
+			<h1 style={{ fontSize: `1em`, margin: 0 }}>
 				<Link
 					to="/"
 					style={{
