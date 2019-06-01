@@ -6,7 +6,7 @@ const sassVariables = require('sass-extract-loader!../scss/_variables.scss').glo
 /**
  * HomeHeroInnerWrapper styles.
  */
-const HomeHeroInnerWrapper = styled.div`
+const HomeHeroInnerWrapper = styled.section`
 	display: flex;
 	align-items: center;
 
@@ -14,37 +14,49 @@ const HomeHeroInnerWrapper = styled.div`
 		width: 50%;
 	}
 `
-
 /**
  * HomeHeroTitle styles.
  */
 const HomeHeroTitle = styled.div`
 	h1 {
 		margin-bottom: 0;
+		line-height: 1;
+
+		span {
+			display: block;
+			margin-bottom: 1em;
+			font-size: .279069904em; /* 19 */
+		}
 	}
 `
-
 /**
- * Planet styles.
+ * Planet Wrapper styles.
  */
 const PlanetWrapper = styled.div`
 	position: relative;
 `
-
+/**
+ * Planet styles.
+ */
 const Planet = styled.div`
 	position: relative;
 	width: 100%;
 	padding-bottom: 100%;
-	background-color: ${sassVariables["$red-l"].value.hex};
+	background-color: ${sassVariables["$primary-color-l"].value.hex};
 	border-radius: 50%;
 `
-
+/**
+ * Rocket styles.
+ */
 const RocketStyled = styled(Rocket)`
-	transform: translate(-50%, 0);
 	position: absolute;
-	top: -6.104129264%;
-	left: 50%;
-	max-width: 39.35483871%;
+	top: 0;
+	right: 0;
+	left: 0;
+	margin-top: -6.307977737%; /* Target distance / Rocket height * 100 */
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 39.35483871%; /* Rocket target width / Planet width * 100 */
 `
 
 /**
@@ -53,9 +65,8 @@ const RocketStyled = styled(Rocket)`
 const HomeHero = props => (
 	<HomeHeroInnerWrapper>
 		<HomeHeroTitle>
-			<h1>Hi, I’m
-			Cristian Guerra</h1>
-			<p>a Web Developer Launching stuff since 2009</p>
+			<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
+			<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
 		</HomeHeroTitle>
 		<PlanetWrapper style={props.style}>
 			<Planet />
