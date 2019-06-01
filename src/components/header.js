@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import MainMenu from "./mainmenu"
+import MainMenu from "./main-menu"
 import Container from "./container"
 import styled from "styled-components"
 
