@@ -78,18 +78,19 @@ a {
 }
 
 /**
- * Text-align css classes.
- * Use: .text-right | .text-center | .text-left
+ * Text css classes.
+ * Use: .text-right | .text-uppercase , etc.
  */
-$alignClasses: right, center, left;
+$textClasses: (
+	right: "align",
+	center: "align",
+	left: "align",
+	uppercase: "transform",
+	lowercase: "transform"
+);
 
-@each $alignClass in $alignClasses {
-	.text-#{$alignClass} {
-		text-align: $alignClass;
+@each $value, $property in $textClasses {
+	.text-#{$value} {
+		text-#{$property}: $value;
 	}
-}
-
-// Uppercase text.
-.text-uppercase {
-	text-transform: uppercase;
 }
