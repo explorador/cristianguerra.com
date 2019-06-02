@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
 import HomeHero from "../components/home-hero"
+import ProjectList from "../components/projects-list"
 
 const IndexPage = () => (
 	<Layout>
@@ -11,6 +12,8 @@ const IndexPage = () => (
 		<Container mediumWidth>
 
 			<HomeHero />
+
+			<ProjectList />
 
 		</Container>
 	</Layout>
