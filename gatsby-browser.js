@@ -4,4 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import "./src/scss/global.scss"
+const sassVariables = require('sass-extract-loader?{"plugins":["sass-extract-js"]}!./src/scss/_variables.scss')
+
+export const wrapPageElement = ({ element }) => (
+	<ThemeProvider theme={sassVariables}>
+		{element}
+	</ThemeProvider>
+)

@@ -5,16 +5,18 @@
 /**
  * Symbology:
  *
- * l = light
- * lx = lighter
- * d = dark
- * dx = darker
+ * L = light
+ * Lx = lighter
+ * D = dark
+ * Dx = darker
  */
 
-$black:             #151313;
-$red:               #f33;
-$red-l:             #f55f44;
-$gray:              #535461;
-$white:             #fff;
-$primary-color:     $red;
-$primary-color-l:   $red-l;
+$black:           #151313;
+$red:             #f33;
+$redL:            #f55f44;
+$redLx:           #f55f44;
+$gray:            #535461;
+$white:           #fff;
+$primaryColor:    $red;
+$primaryColorL:   $redL;
+$baseFontSize:    21;
