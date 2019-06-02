@@ -18,18 +18,16 @@
 /**
  * Typography variables.
  */
-// Base font size.
-$font-base-size: 19;
 // Typography Scale Ratio: https://www.modularscale.com/?19&px&1.2
 $typographyScaleRatio: 1.2;
 // H tags "font-size" base.
-$headingsBase: poly-pow($typographyScaleRatio, 1) * $font-base-size; // (ratio^n)*base
+$headingsBase: poly-pow($typographyScaleRatio, 1) * $baseFontSize; // (ratio^n)*base
 
 /**
  * em function
  * Converts px to em.
  */
-@function em($pixels, $context: $font-base-size) {
+@function em($pixels, $context: $baseFontSize) {
 	@return #{ $pixels / $context }em;
 }
 
@@ -58,7 +56,7 @@ body {
 	background: $black;
 	color: $white;
 	font-family: 'Inconsolata', monospace;
-	font-size: #{$font-base-size}px;
+	font-size: #{$baseFontSize}px;
 	line-height: 1.75;
 	-webkit-font-smoothing: antialiased; // http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
 	-moz-osx-font-smoothing: grayscale; // Useful for light text on dark backgrounds.
@@ -79,11 +77,11 @@ a {
 }
 
 .text-color-primary {
-	color: $primary-color;
+	color: $primaryColor;
 }
 
 .text-small {
-	font-size: em(poly-pow($typographyScaleRatio, -1) * $font-base-size); // (ratio^n)*base
+	font-size: em(poly-pow($typographyScaleRatio, -1) * $baseFontSize); // (ratio^n)*base
 	line-height: 1.4;
 }
 
