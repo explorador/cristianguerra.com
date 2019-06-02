@@ -12,6 +12,8 @@
 @import "normalize";
 // Color variables.
 @import "variables";
+// Inconsolate font.
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
 
 /**
  * Typography variables.
@@ -55,12 +57,13 @@ html {
 body {
 	background: $black;
 	color: $white;
+	font-family: 'Inconsolata', monospace;
 	font-size: #{$font-base-size}px;
 	line-height: 1.75;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased; // http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+	-moz-osx-font-smoothing: grayscale; // Useful for light text on dark backgrounds.
 	font-feature-settings: "kern", "liga", "clig", "calt";
-	font-kerning: normal;
+	font-kerning: normal; // Use kerning information stored in the font.
 }
 
 p {
