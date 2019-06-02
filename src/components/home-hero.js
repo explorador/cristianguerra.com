@@ -10,7 +10,7 @@ const HomeHeroInnerWrapper = styled.section`
 	display: flex;
 	align-items: center;
 	padding-top: ${ props => em( 120, props.theme.baseFontSize ) };
-	padding-bottom: ${ props => em( 40, props.theme.baseFontSize ) };
+	padding-bottom: ${ props => em( 60, props.theme.baseFontSize ) };
 
 	> div {
 		width: 50%;
