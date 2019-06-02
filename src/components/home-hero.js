@@ -1,7 +1,7 @@
 import React from 'react'
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
-const sassVariables = require('sass-extract-loader!../scss/_variables.scss').global;
+import { em } from "polished"
 
 /**
  * HomeHeroInnerWrapper styles.
@@ -9,6 +9,8 @@ const sassVariables = require('sass-extract-loader!../scss/_variables.scss').glo
 const HomeHeroInnerWrapper = styled.section`
 	display: flex;
 	align-items: center;
+	padding-top: ${ props => em( 120, props.theme.baseFontSize ) };
+	padding-bottom: ${ props => em( 40, props.theme.baseFontSize ) };
 
 	> div {
 		width: 50%;
@@ -24,8 +26,7 @@ const HomeHeroTitle = styled.div`
 
 		span {
 			display: block;
-			margin-bottom: 1em;
-			font-size: .279069904em; /* 19 */
+			font-size: .279069904em; /* ( font-base size / context ) */
 		}
 	}
 `
@@ -42,9 +43,10 @@ const Planet = styled.div`
 	position: relative;
 	width: 100%;
 	padding-bottom: 100%;
-	background-color: ${sassVariables["$primary-color-l"].value.hex};
+	background-color: ${props => props.theme.primaryColorL};
 	border-radius: 50%;
 `
+
 /**
  * Rocket styles.
  */
