@@ -1,19 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import { em, hideVisually } from "polished"
+import GithubIcon from "../images/github.inline.svg"
 
 /**
  * Styles for "ul" main menu "wrapper" element.
  */
 const MainMenuWrapper = styled.ul`
 	display: flex;
-	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
 	list-style: none;
 
 	a {
-		padding-right: 1em;
-		padding-left: 1em;
+		display: block;
+		padding-right: ${ props => em( 15, props.theme.baseFontSize ) };
+		padding-left: ${ props => em( 15, props.theme.baseFontSize ) };
 		text-decoration: none;
+	}
+
+	svg {
+		position: relative;
+		top: ${ props => em( -2, props.theme.baseFontSize ) };
+		display: inline-block;
+		vertical-align: middle;
+		width: 1em;
+		height: 1em;
+		fill: #fff;
+
+		& + span {
+			${hideVisually()}
+		}
 	}
 
 	li:first-child {
@@ -35,10 +54,10 @@ const MainMenuWrapper = styled.ul`
 const NavMenuItem = props => (
 	<li>
 		<Link to={props.to}>
-			{props.children}
-			{props.image &&
-				<img src="props.image" alt=""/>
+			{props.icon &&
+				props.icon
 			}
+			<span>{ props.children }</span>
 		</Link>
 	</li>
 )
@@ -51,6 +70,7 @@ const MainMenu = props => (
 		<NavMenuItem to="/blog">Blog</NavMenuItem>
 		<NavMenuItem to="/about">About Me</NavMenuItem>
 		<NavMenuItem to="/contact">Contact</NavMenuItem>
+		<NavMenuItem to="/" icon={<GithubIcon />}>GitHub</NavMenuItem>
 	</MainMenuWrapper>
 )
 
