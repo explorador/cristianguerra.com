@@ -37,7 +37,7 @@ module.exports = {
 				implementation: require("sass"),
 				includePaths: [
 					require("node-normalize-scss").includePaths,
-					path.resolve(__dirname, "./node_modules/sass-math-pow/sass"),
+					require('path').dirname(require.resolve("sass-math-pow/sass/_math-pow.scss"))
 				],
 				precision: 8,
 			},
