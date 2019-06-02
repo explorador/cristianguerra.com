@@ -7,8 +7,11 @@ const mediumWidth = `1200px`;
 const defaultWidth = `720px`;
 
 const Container = styled.div`
-	${ props => ( props.fullWidth && ! props.mediumWidth ) ? "max-width: 100%" : `max-width: ${defaultWidth};` };
-	${ props => props.mediumWidth && `max-width: ${mediumWidth};` };
+	max-width: ${ props =>
+		(props.fullWidth && `100%`)
+		|| (props.mediumWidth && mediumWidth)
+		|| defaultWidth
+	};
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1em;
