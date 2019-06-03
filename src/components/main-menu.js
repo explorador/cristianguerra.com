@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { em, hideVisually } from "polished"
+import { rem, em, hideVisually } from "polished"
 import GithubIcon from "../images/github.inline.svg"
 
 /**
@@ -9,15 +9,20 @@ import GithubIcon from "../images/github.inline.svg"
  */
 const MainMenuWrapper = styled.ul`
 	display: flex;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 0 0 auto;
 	padding: 0;
 	list-style: none;
+
+	/* Tablet and Mobile styles */
+	@media only screen and ( max-width: 1024px ) {
+		margin-left: ${ props => rem( 25, props.baseFontSize ) };
+	}
 
 	a {
 		display: block;
 		padding-right: ${ props => em( 15, props.theme.baseFontSize ) };
 		padding-left: ${ props => em( 15, props.theme.baseFontSize ) };
+		line-height: 1;
 		text-decoration: none;
 	}
 
@@ -27,6 +32,7 @@ const MainMenuWrapper = styled.ul`
 		display: inline-block;
 		vertical-align: middle;
 		width: 1em;
+		max-width: none;
 		height: 1em;
 		fill: #fff;
 
