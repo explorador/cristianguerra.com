@@ -95,13 +95,19 @@ a {
 	h#{$n},
 	.h#{$n} {
 		margin-top: 0;
+		margin-bottom: .5em;
 		font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $headingsBase); // (ratio^n)*base
-		line-height: 1.170212766;
+		line-height: 1.1;
 		text-rendering: optimizeLegibility;
 	}
 
 	h#{$n} {
 		text-transform: uppercase;
+	}
+
+	p + h#{$n},
+	p + .h#{$n} {
+		margin-top: 1em;
 	}
 }
 
