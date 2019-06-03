@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "gatsby-link"
 import styled from "styled-components"
-import { em } from "polished"
+import { rem, em } from "polished"
 import SketchLogo from "../images/sketch-logo.inline.svg"
 import FirefoxLogo from "../images/firefox-logo.inline.svg"
 import RocketIcon from "../images/rocket-icon.inline.svg"
@@ -38,6 +38,9 @@ const ProjectBoxStyled = styled.li`
 	transition: border-color ease .2s;
 
 	svg {
+		margin-right: auto;
+		margin-left: auto;
+		margin-bottom: ${ props => rem( 17, props.theme.baseFontSize ) };
 		fill: ${ props => props.theme.gray };
 		transition: fill ease .2s;
 	}
@@ -62,7 +65,7 @@ const ProjectBoxStyled = styled.li`
  * Project title styles.
  */
 const ProjectTitle = styled.h3`
-	margin-bottom: 0;
+	margin-bottom: ${ props => rem( 5, props.theme.baseFontSize ) };
 `
 
 /**
