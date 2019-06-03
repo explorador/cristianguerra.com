@@ -2,7 +2,7 @@
  * Global styles. 💪
  *
  * Note: "styled-components" is being used in this site.
- * This file is ONLY for typography styles
+ * This file is ONLY for global and typography styles
  * See: https://www.styled-components.com/docs
  */
 
@@ -88,26 +88,43 @@ a {
 /**
  * Headings h1-h6.
  */
+
+%heading-styles-with-classes {
+	margin-top: 0;
+	margin-bottom: .5em;
+	line-height: 1.1;
+	text-rendering: optimizeLegibility;
+}
+
+%heading-styles-only {
+	text-transform: uppercase;
+}
+
+%heading-after-paragraph {
+	margin-top: 1em;
+}
+
 @for $n from 1 through 6 {
 	// Convert 1 to 6, 2 to 5, etc.
 	$reverseN: 6 - $n + 1; // ArrayLength-n+1
 
 	h#{$n},
 	.h#{$n} {
-		margin-top: 0;
-		margin-bottom: .5em;
 		font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $headingsBase); // (ratio^n)*base
-		line-height: 1.1;
-		text-rendering: optimizeLegibility;
+	}
+
+	h#{$n},
+	.h#{$n} {
+		@extend %heading-styles-with-classes;
 	}
 
 	h#{$n} {
-		text-transform: uppercase;
+		@extend %heading-styles-only;
 	}
 
 	p + h#{$n},
 	p + .h#{$n} {
-		margin-top: 1em;
+		@extend %heading-after-paragraph;
 	}
 }
 
@@ -128,4 +145,20 @@ $textClasses: (
 	.text-#{$value} {
 		text-#{$property}: $value;
 	}
+}
+
+/**
+ * Images styles
+ */
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.img-center {
+	margin-right: auto;
+	margin-left: auto;
 }
