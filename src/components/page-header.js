@@ -18,8 +18,10 @@ const PageHeaderWrapper = styled.div`
 
 const PageHeader = props => (
 	<PageHeaderWrapper className="text-center">
-		<h1 >{props.title}</h1>
-		<p className="text-uppercase">{props.subtitle}</p>
+		<h1>{props.title}</h1>
+		{props.subtitle &&
+			<p className="text-uppercase">{props.subtitle}</p>
+		}
 	</PageHeaderWrapper>
 )
 
