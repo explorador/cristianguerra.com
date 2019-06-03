@@ -10,6 +10,8 @@ import NotFoundImage from "../images/notfound.inline.svg"
 
 const NotFoundImageStyled = styled(NotFoundImage)`
 	display: block;
+	max-width: 100%;
+	height: auto;
 	margin: 0 auto ${ props => rem( 120, props.theme.baseFontSize ) };
 `
 
