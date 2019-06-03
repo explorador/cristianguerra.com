@@ -9,7 +9,9 @@ export default () => (
 	<Layout>
 		<SEO title="Blog" />
 		<Container>
-			<PageHeader>Blog</PageHeader>
+			<PageHeader
+				title="Blog"
+			/>
 			<p>Blog list</p>
 		</Container>
 	</Layout>

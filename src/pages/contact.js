@@ -9,7 +9,10 @@ export default () => (
 	<Layout>
 		<SEO title="Contact" />
 		<Container>
-			<PageHeader>Contact</PageHeader>
+			<PageHeader
+				title="Contact"
+				subtitle="Where To Find Me"
+			/>
 			<p>Contact Page</p>
 		</Container>
 	</Layout>

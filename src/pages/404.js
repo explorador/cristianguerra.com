@@ -19,7 +19,10 @@ const NotFoundPage = () => (
 	<Layout>
 		<SEO title="404: Not found" />
 		<Container>
-			<PageHeader>404</PageHeader>
+			<PageHeader
+				title="404"
+				subtitle="Houston!"
+			/>
 			<p className="text-center">The page you are looking for doesn’t exists</p>
 			<NotFoundImageStyled />
 		</Container>

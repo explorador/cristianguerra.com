@@ -10,7 +10,9 @@ export default () => (
 	<Layout>
 		<SEO title="About Me" />
 		<Container>
-			<PageHeader>About Me</PageHeader>
+			<PageHeader
+				title="About Me"
+			/>
 			<AboutImage />
 
 		</Container>
