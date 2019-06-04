@@ -2,6 +2,7 @@ import React from 'react'
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
 import { em } from "polished"
+import Stars from "./stars"
 
 /**
  * HomeHeroInnerWrapper styles.
@@ -61,11 +62,17 @@ const RocketStyled = styled(Rocket)`
 	max-width: 39.35483871%; /* Rocket target width / Planet width * 100 */
 `
 
+const StarStyled = styled(Stars)`
+	top: 0;
+`
+
 /**
  * HomeHero Component
  */
 const HomeHero = props => (
 	<HomeHeroInnerWrapper>
+		<Stars opacity=".7" />
+		<Stars position="left" opacity=".3" />
 		<HomeHeroTitle>
 			<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
 			<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
@@ -73,6 +80,7 @@ const HomeHero = props => (
 		<PlanetWrapper style={props.style}>
 			<Planet />
 			<RocketStyled />
+			<StarStyled />
 		</PlanetWrapper>
 	</HomeHeroInnerWrapper>
 )
