@@ -1,10 +1,9 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
 import PageHeader from "../components/page-header"
-import AboutImage from "../images/about.inline.svg"
+import AboutAnimation from "../components/about-animation"
 
 export default () => (
 	<Layout>
@@ -13,8 +12,7 @@ export default () => (
 			<PageHeader
 				title="About Me"
 			/>
-			<AboutImage />
-
+			<AboutAnimation />
 		</Container>
 	</Layout>
 )

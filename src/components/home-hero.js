@@ -1,7 +1,7 @@
 import React from 'react'
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
-import { em } from "polished"
+import { rem } from "polished"
 import Stars from "./stars"
 
 /**
@@ -10,25 +10,47 @@ import Stars from "./stars"
 const HomeHeroInnerWrapper = styled.section`
 	display: flex;
 	align-items: center;
-	padding-top: ${ props => em( 120, props.theme.baseFontSize ) };
-	padding-bottom: ${ props => em( 60, props.theme.baseFontSize ) };
+	padding-top: ${ props => rem( 90 ) };
+	padding-bottom: ${ props => rem( 60 ) };
 
 	> div {
-		width: 50%;
+		flex-grow: 1;
+	}
+
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+		flex-direction: column;
+		padding-top: ${ props => rem( 60 ) };
+		text-align: center;
+	}
+
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+		padding-top: ${ props => rem( 30 ) };
+		padding-bottom: ${ props => rem( 40 ) };
 	}
 `
 /**
  * HomeHeroTitle styles.
  */
 const HomeHeroTitle = styled.div`
+	padding-right: ${ rem( 20 ) };
+
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+		padding-right: 0;
+		padding-bottom: ${ rem( 25 ) };
+	}
+
 	h1 {
 		margin-bottom: 0;
-		line-height: 1;
+		line-height: .85;
 
 		span {
 			display: block;
 			font-size: .279069904em; /* ( font-base size / context ) */
 		}
+	}
+
+	p {
+		line-height: 1.2;
 	}
 `
 /**
@@ -36,6 +58,12 @@ const HomeHeroTitle = styled.div`
  */
 const PlanetWrapper = styled.div`
 	position: relative;
+	width: 40%;
+
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+		width: 100%;
+		max-width: ${ rem( 344 ) };
+	}
 `
 /**
  * Planet styles.
@@ -46,6 +74,7 @@ const Planet = styled.div`
 	padding-bottom: 100%;
 	background-color: ${props => props.theme.primaryColorL};
 	border-radius: 50%;
+	z-index: -2;
 `
 
 /**
@@ -63,7 +92,12 @@ const RocketStyled = styled(Rocket)`
 `
 
 const StarStyled = styled(Stars)`
-	top: 0;
+	height: 100%;
+	top: ${ rem( -15 ) };
+
+	svg {
+		height: 100%;
+	}
 `
 
 /**

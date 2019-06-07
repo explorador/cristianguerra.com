@@ -16,6 +16,8 @@ const StarWrapper = styled.div`
 	}
 	/* "Opacity" prop. */
 	${ props => ( props.opacity && `opacity: ${props.opacity};` ) }
+	${ props => ( props.top && `top: ${props.top};` ) }
+	z-index: -1;
 `
 
 export default class Stars extends React.Component {
@@ -67,7 +69,7 @@ export default class Stars extends React.Component {
 
 	render() {
 		return (
-			<StarWrapper className={ this.props.className } position={this.props.position} opacity={this.props.opacity}>
+			<StarWrapper className={ this.props.className } position={this.props.position} top={this.props.top} opacity={this.props.opacity}>
 				<svg xmlns="http://www.w3.org/2000/svg" width="772" height="511" viewBox="0 0 772 511">
 					<defs>
 						<linearGradient id="a" x1="50%" x2="50%" y1="100%" y2=".036%">

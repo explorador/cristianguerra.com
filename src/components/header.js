@@ -17,12 +17,12 @@ const HeaderContainerStyled = styled(Container)`
 	padding-bottom: 1em;
 
 	/* Tablet and Mobile styles */
-	@media only screen and ( max-width: 1024px ) {
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
 		justify-content: center;
 	}
 
 	/* Mobile styles */
-	@media only screen and ( max-width: 767px ) {
+	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
 		flex-direction: column;
 	}
 `
@@ -51,7 +51,7 @@ const SiteLogoStyles = styled.h1`
 	}
 
 	/* Tablet and Mobile styles */
-	@media only screen and ( max-width: 1024px ) {
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
 		svg {
 			max-width: ${ rem( 66 ) };
 		}

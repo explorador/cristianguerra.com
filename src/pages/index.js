@@ -9,12 +9,9 @@ const IndexPage = () => (
 	<Layout>
 		<SEO title="Home" />
 		<Container mediumWidth>
-
 			<HomeHero />
-
-			<ProjectList />
-
 		</Container>
+		<ProjectList />
 	</Layout>
 )
 

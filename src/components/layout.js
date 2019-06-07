@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Container from "./container"
 import styled from "styled-components"
+import { rem } from "polished"
 import Header from "./header"
 
 /**
@@ -27,6 +28,18 @@ const SiteWrapper = styled.div`
 const MainStyled = styled.main`
 	flex: 1 0 auto;
 `
+
+/**
+ * Footer styles.
+ */
+const Footer = styled.footer`
+	padding: ${ rem(30) } 0;
+
+	p {
+		margin-bottom: 0;
+	}
+`
+
 
 /**
  * Layout Component
@@ -47,19 +60,11 @@ const Layout = ({ children }) => (
 			<SiteWrapper>
 				<Header siteTitle={data.site.siteMetadata.title} />
 				<MainStyled>{children}</MainStyled>
-				<footer
-					style={{
-						padding: `1em 0`
-					}}
-				>
-					<Container
-						style={{
-							textAlign: `center`
-						}}
-					>
-						© {new Date().getFullYear()} {data.site.siteMetadata.author_url}
+				<Footer>
+					<Container className="text-center">
+						<p className="text-small">&copy; {new Date().getFullYear()} {data.site.siteMetadata.author_url}</p>
 					</Container>
-				</footer>
+				</Footer>
 			</SiteWrapper>
 		)}
 	/>

@@ -5,18 +5,18 @@ import SEO from "../components/seo"
 import Container from "../components/container"
 import PageHeader from "../components/page-header"
 import ProjectList from "../components/projects-list"
-import ContactImage from "../images/contact.inline.svg"
+import Stars from "../components/stars"
 
 export default () => (
 	<Layout>
 		<SEO title="Contact" />
 		<Container>
+			<Stars opacity=".8" />
 			<PageHeader
 				title="Contact"
 				subtitle="Where To Find Me"
 			/>
-			<p className="text-center">Sorry, I’m not available for freelance projects at the moment but you can still follow me on Github.</p>
-			<ContactImage className="img-center" />
+			<p className="text-center">I’m not available for freelance projects at the moment. <br/>You can follow me on Github.</p>
 		</Container>
 		<ProjectList />
 	</Layout>

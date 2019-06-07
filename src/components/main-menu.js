@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { rem, em, hideVisually } from "polished"
+import { rem, em, rgba, hideVisually } from "polished"
 import GithubIcon from "../images/github.inline.svg"
 
 /**
@@ -13,9 +13,13 @@ const MainMenuWrapper = styled.ul`
 	padding: 0;
 	list-style: none;
 
-	/* Tablet and Mobile styles */
-	@media only screen and ( max-width: 1024px ) {
+	/* Tablet styles */
+	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
 		margin-left: ${ props => rem( 25, props.baseFontSize ) };
+	}
+
+	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+		margin-left: 0;
 	}
 
 	a {
@@ -24,6 +28,20 @@ const MainMenuWrapper = styled.ul`
 		padding-left: ${ props => em( 15, props.theme.baseFontSize ) };
 		line-height: 1;
 		text-decoration: none;
+		transition: text-shadow ease .3s;
+
+		@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+			padding-right: ${ props => em( 12, props.theme.baseFontSize ) };
+			padding-left: ${ props => em( 12, props.theme.baseFontSize ) };
+		}
+
+		&:hover {
+			text-shadow: 0 0 12px ${ rgba(`#fff`, .6) };
+
+			svg {
+				filter: drop-shadow(0px 5px 5px rgba(255,255,255,0.4));
+			}
+		}
 	}
 
 	svg {
