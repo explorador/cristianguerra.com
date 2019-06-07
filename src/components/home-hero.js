@@ -109,7 +109,8 @@ export default class HomeHero extends React.Component {
 	componentDidMount() {
 		// eslint-disable-next-line
 		const parallaxPlanet = new Parallax( this.planetWrapper, {
-			scalarX: 20,
+			scalarX: 15,
+			scalarY: 15,
 		});
 	}
 
@@ -123,8 +124,8 @@ export default class HomeHero extends React.Component {
 					<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
 				</HomeHeroTitle>
 				<PlanetWrapper ref={ e => this.planetWrapper = e }>
-					<Planet data-depth=".6" />
-					<RocketStyled data-depth=".2" />
+					<Planet data-depth=".2" />
+					<RocketStyled data-depth=".5" />
 					<StarStyled />
 				</PlanetWrapper>
 			</HomeHeroInnerWrapper>
