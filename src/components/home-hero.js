@@ -2,6 +2,7 @@ import React from 'react'
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
 import { rem } from "polished"
+import Parallax from 'parallax-js'
 import Stars from "./stars"
 
 /**
@@ -103,20 +104,30 @@ const StarStyled = styled(Stars)`
 /**
  * HomeHero Component
  */
-const HomeHero = props => (
-	<HomeHeroInnerWrapper>
-		<Stars opacity=".7" />
-		<Stars position="left" opacity=".3" />
-		<HomeHeroTitle>
-			<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
-			<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
-		</HomeHeroTitle>
-		<PlanetWrapper style={props.style}>
-			<Planet />
-			<RocketStyled />
-			<StarStyled />
-		</PlanetWrapper>
-	</HomeHeroInnerWrapper>
-)
+export default class HomeHero extends React.Component {
 
-export default HomeHero
+	componentDidMount() {
+		// eslint-disable-next-line
+		const parallaxPlanet = new Parallax( this.planetWrapper, {
+			scalarX: 20,
+		});
+	}
+
+	render() {
+		return (
+			<HomeHeroInnerWrapper>
+				<Stars opacity=".7" />
+				<Stars position="left" opacity=".3" />
+				<HomeHeroTitle>
+					<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
+					<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
+				</HomeHeroTitle>
+				<PlanetWrapper ref={ e => this.planetWrapper = e }>
+					<Planet data-depth=".6" />
+					<RocketStyled data-depth=".2" />
+					<StarStyled />
+				</PlanetWrapper>
+			</HomeHeroInnerWrapper>
+		)
+	}
+}
