@@ -106,11 +106,19 @@ const StarStyled = styled(Stars)`
  */
 export default class HomeHero extends React.Component {
 
+	// Parallax instance.
+	parallaxPlanet = null;
+
+	componentWillUnmount() {
+		// Completely destroys the Parallax instance, allowing it to be garbage collected.
+		this.parallaxPlanet.destroy();
+	}
+
 	componentDidMount() {
-		// eslint-disable-next-line
-		const parallaxPlanet = new Parallax( this.planetWrapper, {
-			scalarX: 15,
-			scalarY: 15,
+		// Creating Parallax instance.
+		this.parallaxPlanet = new Parallax( this.planetWrapper, {
+			scalarX: 0,
+			scalarY: 40,
 		});
 	}
 
@@ -124,8 +132,8 @@ export default class HomeHero extends React.Component {
 					<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
 				</HomeHeroTitle>
 				<PlanetWrapper ref={ e => this.planetWrapper = e }>
-					<Planet data-depth=".2" />
-					<RocketStyled data-depth=".5" />
+					<Planet data-depth=".1" />
+					<RocketStyled data-depth=".3" />
 					<StarStyled />
 				</PlanetWrapper>
 			</HomeHeroInnerWrapper>
