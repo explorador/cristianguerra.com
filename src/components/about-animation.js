@@ -58,7 +58,7 @@ export default class AboutAnimation extends React.Component {
 		return (
 			<StyledAnimation>
 				<svg width="626" height="323" viewBox="0 0 626 323" xmlns="http://www.w3.org/2000/svg">
-					<g fill-rule="nonzero" fill="none">
+					<g fillRule="nonzero" fill="none">
 						<circle ref={ e => this.Star1 = e } fill="#F2F2F2" cx="294.5" cy="3.5" r="3.5"/>
 						<circle ref={ e => this.Star2 = e } fill="#F2F2F2" cx="182.5" cy="120.5" r="1.5"/>
 						<circle ref={ e => this.Star3 = e } fill="#F2F2F2" cx="392.5" cy="187.5" r="1.5"/>
