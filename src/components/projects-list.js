@@ -46,7 +46,7 @@ const ProjectListWrapper = styled.ul`
 const ProjectBoxStyled = styled.li`
 	position: relative;
 	margin: 0 ${rem( 45 )} ${rem( 45 )};
-	width: 219px;
+	width: ${ rem( 220 ) };
 	text-align: center;
 	border: solid 1px ${ props => props.theme.gray };
 	border-radius: 5px;
@@ -85,7 +85,7 @@ const ProjectBoxStyled = styled.li`
  * Project title styles.
  */
 const ProjectTitle = styled.h3`
-	margin-bottom: ${ props => rem( 5, props.theme.baseFontSize ) };
+	margin-bottom: ${ props => rem( 5 ) };
 `
 
 /**
