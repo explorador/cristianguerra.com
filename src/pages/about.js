@@ -11,6 +11,7 @@ export default () => (
 		<Container>
 			<PageHeader
 				title="About Me"
+				subtitle="Another “Origin Story”"
 			/>
 			<AboutAnimation />
 		</Container>
