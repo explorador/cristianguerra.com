@@ -11,13 +11,26 @@ const StarWrapper = styled.div`
 	position: absolute;
 	/* "Position" prop. options: left | right */
 	${ props =>
-		( props.position === 'left' && `left: 0;` )
-		|| ( props.position === 'right' && `right: 0;` )
+		( props.position === 'left' && `
+			left: 0;
+		`)
+		|| ( props.position === 'right' && `
+			right: 0;
+		` )
+		|| ( props.position !== ('left' || 'right') && `
+			right: 0;
+			left: 0;
+		` )
 	}
 	/* "Opacity" prop. */
 	${ props => ( props.opacity && `opacity: ${props.opacity};` ) }
 	${ props => ( props.top && `top: ${props.top};` ) }
 	z-index: -1;
+
+	svg {
+		margin-right: auto;
+		margin-left: auto;
+	}
 `
 
 export default class Stars extends React.Component {
