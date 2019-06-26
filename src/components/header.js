@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { rem, hideVisually, rgba, darken } from "polished"
+import { rem, hideVisually, rgba } from "polished"
 import MainMenu from "./main-menu"
 import Container from "./container"
 import styled from "styled-components"
@@ -32,35 +32,23 @@ const SiteLogoStyles = styled.h1`
 
 	/* Tablet and Mobile styles */
 	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
-		svg {
-			max-width: ${ rem( 66 ) };
-		}
-
 		span {
 			${ hideVisually() };
 		}
 	}
 
-	${ props => ( props.scrolled &&
-	 `
-		@media only screen and ( max-width: ${ props.theme.small }px ) {
-			display: none;
+	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+		svg {
+			max-width: ${ rem( 30 ) };
 		}
-	 `
- 	) }
+	}
 `
 
 /**
  * Logo icon wrapper styles.
  */
  const LogoIconWrapper = styled.div`
- ${ props => ( props.scrolled &&
-	 `
-		svg {
-			max-width: ${rem(50)};
-		}
-	 `
- ) }
+	 max-width: ${rem(50)};
 `
 
 /**
@@ -68,9 +56,9 @@ const SiteLogoStyles = styled.h1`
  * @param {props} SiteTitle
  */
 const SiteLogo = (props) => (
-	<SiteLogoStyles scrolled={ props.scrolled }>
+	<SiteLogoStyles>
 		<Link to="/">
-			<LogoIconWrapper scrolled={ props.scrolled }>
+			<LogoIconWrapper>
 				<LogoIcon />
 			</LogoIconWrapper>
 			<span className="h6">{ props.siteTitle }</span>
@@ -83,21 +71,11 @@ const SiteLogo = (props) => (
  * Header element styles
  */
 const HeaderStyled = styled.header`
+	position: sticky;
 	flex-shrink: 0;
 	z-index: 99;
-	${ props => ( props.scrolled &&
-		`
-		position: sticky;
-		top: 0;
-		background-color: ${ rgba( props.theme.black, .95 ) };
-
-		@media only screen and ( max-width: ${ props.theme.small }px ) {
-			padding-top: ${ rem(10) };
-			padding-bottom: ${ rem(10) };
-			background-color: ${ rgba( darken( '0.013', props.theme.black ), .97 ) };
-		}
-		`
-	) }
+	top: 0;
+	background-color: ${ props => rgba( props.theme.black, .95 ) };
 `
 
 /**
@@ -117,6 +95,8 @@ const HeaderContainerStyled = styled(Container)`
 	/* Mobile styles */
 	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
 		flex-direction: column;
+		padding-top: .5em;
+		padding-bottom: .8em;
 	}
 `
 
@@ -124,45 +104,11 @@ const HeaderContainerStyled = styled(Container)`
  * <Header /> component
  */
 export default class Header extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			scrolled: false,
-		}
-	}
-
-	// Change "scrolled" state when scrolling.
-	handleWindowScroll = () => {
-		let siteHeader = this.SiteHeader;
-		if ( siteHeader !== null ) {
-			if ( window.scrollY > ( siteHeader.offsetHeight ) ) {
-				this.setState({
-					scrolled: true
-				});
-			} else {
-				this.setState({
-					scrolled: false
-				});
-			}
-		}
-	}
-
-	componentWillUnmount() {
-		// Cleaning up scroll event handler.
-		window.removeEventListener( 'scroll', this.handleWindowScroll );
-	}
-
-	componentDidMount() {
-		// Creating scroll event handler.
-		window.addEventListener( 'scroll', this.handleWindowScroll );
-	}
-
 	render() {
 		return (
-			<HeaderStyled scrolled={ this.state.scrolled } ref={ element => this.SiteHeader = element }>
+			<HeaderStyled>
 				<HeaderContainerStyled mediumWidth>
-					<SiteLogo scrolled={ this.state.scrolled } siteTitle={this.props.siteTitle} />
+					<SiteLogo siteTitle={this.props.siteTitle} />
 					<MainMenu />
 				</HeaderContainerStyled>
 			</HeaderStyled>
