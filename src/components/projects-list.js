@@ -1,8 +1,8 @@
 import React from "react"
-import Link from "gatsby-link"
+import Link from "./link"
 import styled from "styled-components"
-import { rem, em } from "polished"
-import Container from "../components/container"
+import { rem, rgba } from "polished"
+import Container from "./container"
 import Stars from "./stars"
 import SketchLogo from "../images/sketch-logo.inline.svg"
 import FirefoxLogo from "../images/firefox-logo.inline.svg"
@@ -12,20 +12,21 @@ import RocketIcon from "../images/rocket-icon.inline.svg"
  * Project List "section" wrapper styles.
  */
 const ProjectListStyled = styled.section`
-	position: sticky;
-	top: 100vh;
-	padding-top: ${ props => em( 60, props.theme.baseFontSize ) };
-	padding-bottom: ${ props => em( 60, props.theme.baseFontSize ) };
+	position: relative;
+	padding-top: ${ props => rem( 80 ) };
+	padding-bottom: ${ props => rem( 80 ) };
 
 	&:last-child {
+		position: sticky;
+		top: 100vh;
 		padding-bottom: 0;
 	}
 `
 
 /**
- * Project list title (h2) styles
+ * Project list title (h1) styles
  */
-const ProjectListTitle = styled.h2`
+const ProjectListTitle = styled.h1`
 	margin-bottom: ${ rem( 60 ) };
 `
 
@@ -48,7 +49,7 @@ const ProjectBoxStyled = styled.li`
 	margin: 0 ${rem( 45 )} ${rem( 45 )};
 	width: ${ rem( 220 ) };
 	text-align: center;
-	border: solid 1px ${ props => props.theme.gray };
+	border: solid 1px ${ props => rgba( props.theme.gray, 0.5 ) };
 	border-radius: 5px;
 	transition: border-color ease .2s;
 

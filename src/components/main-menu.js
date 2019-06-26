@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "./link.js"
 import styled from "styled-components"
 import { rem, em, rgba, hideVisually } from "polished"
 import GithubIcon from "../images/github.inline.svg"
