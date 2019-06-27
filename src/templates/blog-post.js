@@ -10,7 +10,7 @@ export default ({ data }) => {
 	const post = data.contentfulBlogPost;
 	return (
 		<Layout>
-			<SEO title="Blog" />
+			<SEO title={post.title} />
 			<Container>
 				<Stars position="center" opacity="0.5" />
 				<PageHeader
