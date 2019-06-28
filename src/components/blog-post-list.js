@@ -29,9 +29,10 @@ const BlogPostList = props => (
 						}
 						title
 						postImage {
-							file {
-								url
+							fixed(width: 410, height: 245) {
+								...GatsbyContentfulFixed_noBase64
 							}
+							description
 						}
 					}
 				}
@@ -45,7 +46,7 @@ const BlogPostList = props => (
 					<BlogPostListWrapper>
 						{ blogList.slice(0, props.limit ? props.limit : 6 ).map( post =>{
 							return (
-								<BlogPost key={ post.id } title={ post.title } link={ `/blog/${post.slug.slug}` } img={ post.postImage.file.url } />
+								<BlogPost key={ post.id } title={ post.title } link={ `/blog/${post.slug.slug}` } img={ post.postImage } />
 							)
 						}
 						) }

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { rem, rgba } from "polished"
+import Img from "gatsby-image"
 
 const BlogPostWrapper = styled.div`
 	margin: ${ rem( 40 ) } ${ rem( 60 ) };
@@ -28,27 +29,24 @@ const BlogPostTitle = styled.h2`
 	font-weight: 400;
 `
 
-const BlogPostImage = styled.div`
+const BlogPostImage = styled(Img)`
 	align-self: flex-end;
 	width: 100%;
 	margin: 0 ${ rem(15) } ${ rem(15) };
 	padding-bottom: 56.01965602%;
 	filter: grayscale(100%);
 	border-radius: 5px;
-	background-color: ${ props => props.theme.black };
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-clip: padding-box;
 `
 
-const BlogPost = props => (
-	<BlogPostWrapper>
-		<Link to={props.link}>
-			<BlogPostTitle className="h6 text-capitalize">{props.title}</BlogPostTitle>
-			<BlogPostImage style={{ backgroundImage: `url( ${props.img} )` }} />
-		</Link>
-	</BlogPostWrapper>
-)
+const BlogPost = props => {
+	return (
+		<BlogPostWrapper>
+			<Link to={props.link}>
+				<BlogPostTitle className="h6 text-capitalize">{props.title}</BlogPostTitle>
+				<BlogPostImage alt={props.img.description} fixed={props.img.fixed} />
+			</Link>
+		</BlogPostWrapper>
+	)
+}
 
 export default BlogPost
