@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { rem } from "polished"
 
 const PageHeaderWrapper = styled.div`
-	padding-top: ${ props => rem( 70, props.theme.baseFontSize ) };
-	padding-bottom: ${ props => rem( 70, props.theme.baseFontSize ) };
+	padding-top: ${ props => rem( 70 ) };
+	padding-bottom: ${ props => rem( 70 ) };
 
 	h1,
 	p {
