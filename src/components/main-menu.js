@@ -94,7 +94,7 @@ const MainMenu = props => (
 		<NavMenuItem to="/blog">Blog</NavMenuItem>
 		<NavMenuItem to="/about">About Me</NavMenuItem>
 		<NavMenuItem to="/contact">Contact</NavMenuItem>
-		<NavMenuItem to="/" icon={<GithubIcon />}>GitHub</NavMenuItem>
+		<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon />}>GitHub</NavMenuItem>
 	</MainMenuWrapper>
 )
 
