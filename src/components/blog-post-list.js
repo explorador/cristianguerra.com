@@ -4,6 +4,7 @@ import { rem } from "polished"
 import BlogPost from "./blog-post-box"
 import Link from "./link"
 import { StaticQuery, graphql } from "gatsby"
+import Stars from "./stars"
 
 const BlogPostListSection = styled.section`
 	padding-bottom: ${ props => rem( 60 ) };
@@ -42,6 +43,8 @@ const BlogPostList = props => (
 			const blogList = data.allContentfulBlogPost.nodes;
 			return (
 				<BlogPostListSection>
+					{ // Display only IF props.limit is set.
+					props.limit && <Stars position="left" opacity=".4" /> }
 					{ props.title && <h1 className="h3 text-center">{ props.title }</h1> }
 					<BlogPostListWrapper>
 						{ blogList.slice(0, props.limit ? props.limit : 6 ).map( post =>{
@@ -52,7 +55,8 @@ const BlogPostList = props => (
 						) }
 					</BlogPostListWrapper>
 					<p className="text-center">
-						{ props.limit && <Link to="/blog" btnStyle="primary">Go to Blog +</Link> }
+						{ // Display only IF props.limit is set.
+						props.limit && <Link to="/blog" btnStyle="primary">Go to Blog +</Link> }
 					</p>
 				</BlogPostListSection>
 			)
