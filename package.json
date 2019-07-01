@@ -31,7 +31,8 @@
     "sass-extract": "^2.1.0",
     "sass-extract-js": "^0.4.0",
     "sass-extract-loader": "^1.1.0",
-    "styled-components": "^4.2.1"
+    "styled-components": "^4.2.1",
+    "typeface-inconsolata": "0.0.72"
   },
   "devDependencies": {
     "node-normalize-scss": "^8.0.0",
