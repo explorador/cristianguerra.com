@@ -5,10 +5,10 @@
  */
 
 import React from "react"
-// Load Inconsolata typeface
 import { ThemeProvider } from "styled-components"
 import "./src/scss/global.scss"
 const sassVariables = require('sass-extract-loader?{"plugins":["sass-extract-js"]}!./src/scss/_variables.scss')
+// Load Inconsolata typeface
 require('typeface-inconsolata')
 
 export const wrapPageElement = ({ element }) => (
