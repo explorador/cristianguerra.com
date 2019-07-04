@@ -1,8 +1,7 @@
-import React from 'react'
+import React from "react"
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
-import { rem } from "polished"
-import Parallax from 'parallax-js'
+import { rem, adjustHue } from "polished"
 import Stars from "./stars"
 
 /**
@@ -59,7 +58,9 @@ const HomeHeroTitle = styled.div`
  */
 const PlanetWrapper = styled.div`
 	position: relative;
-	width: 40%;
+	max-width: 45%;
+	width: 100%;
+	z-index: 10;
 
 	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
 		width: 100%;
@@ -74,6 +75,7 @@ const Planet = styled.div`
 	width: 100%;
 	padding-bottom: 100%;
 	background-color: ${props => props.theme.primaryColorL};
+	background-image: linear-gradient(180deg, ${props => adjustHue(20, props.theme.primaryColorL)} 0%, ${props => props.theme.primaryColorL} 84%);
 	border-radius: 50%;
 	z-index: -2;
 `
@@ -89,54 +91,28 @@ const RocketStyled = styled(Rocket)`
 	margin-top: -6.307977737%; /* Target distance / Rocket height * 100 */
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 39.35483871%; /* Rocket target width / Planet width * 100 */
-`
-
-const StarStyled = styled(Stars)`
-	height: 100%;
-	top: ${ rem( -15 ) };
-
-	svg {
-		height: 100%;
-	}
+	max-width: 46.953405018%; /* Rocket target width / Planet width * 100 */
 `
 
 /**
  * HomeHero Component
  */
-export default class HomeHero extends React.Component {
-
-	// Parallax instance.
-	parallaxPlanet = null;
-
-	componentWillUnmount() {
-		// Completely destroys the Parallax instance, allowing it to be garbage collected.
-		this.parallaxPlanet.destroy();
-	}
-
-	componentDidMount() {
-		// Creating Parallax instance.
-		this.parallaxPlanet = new Parallax( this.planetWrapper, {
-			scalarX: 0,
-			scalarY: 40,
-		});
-	}
-
-	render() {
-		return (
-			<HomeHeroInnerWrapper>
-				<Stars opacity=".7" />
-				<Stars position="left" opacity=".3" />
-				<HomeHeroTitle>
-					<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
-					<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
-				</HomeHeroTitle>
-				<PlanetWrapper ref={ e => this.planetWrapper = e }>
-					<Planet data-depth=".1" />
-					<RocketStyled data-depth=".3" />
-					<StarStyled />
-				</PlanetWrapper>
-			</HomeHeroInnerWrapper>
-		)
-	}
+const HomeHero = () => {
+	return (
+		<HomeHeroInnerWrapper>
+			<Stars opacity=".7" />
+			<Stars position="left" opacity=".3" />
+			<Stars position="right" opacity=".3" />
+			<HomeHeroTitle>
+				<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
+				<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
+			</HomeHeroTitle>
+			<PlanetWrapper>
+				<Planet aria-hidden="true" />
+				<RocketStyled />
+			</PlanetWrapper>
+		</HomeHeroInnerWrapper>
+	)
 }
+
+export default HomeHero
