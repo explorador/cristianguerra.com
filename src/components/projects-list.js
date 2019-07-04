@@ -117,7 +117,7 @@ const ProjectBox = props => (
  */
 const ProjectList = () => (
 	<ProjectListStyled>
-		<Stars position="right" top="0" opacity=".3" />
+		<Stars position="right" top="0" transparency=".3" />
 		<Container mediumWidth>
 			<ProjectListTitle className="h3 text-center">Stuff From My Lab</ProjectListTitle>
 

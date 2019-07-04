@@ -11,7 +11,7 @@ export default () => (
 	<Layout>
 		<SEO title="Blog" />
 		<Container mediumWidth>
-			<Stars position="center" opacity="0.5" />
+			<Stars position="center" transparency="0.5" />
 			<PageHeader
 				title="Blog"
 				subtitle="Not a journal, Just code and stuff"

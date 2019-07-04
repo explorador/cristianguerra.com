@@ -28,7 +28,7 @@ export default () => (
 				<Layout>
 					<SEO title={page.title} />
 					<Container>
-						<Stars opacity=".8" />
+						<Stars transparency=".8" />
 						<PageHeader
 							title={page.title}
 							subtitle={page.subtitle}

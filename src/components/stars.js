@@ -31,8 +31,8 @@ const StarWrapper = styled.div`
 			left: 0;
 		` )
 	}
-	/* "Opacity" prop. */
-	${ props => ( props.opacity && `opacity: ${props.opacity};` ) }
+	/* "Transparency" prop. */
+	${ props => ( props.transparency && `opacity: ${props.transparency};` ) }
 	${ props => ( props.top && `top: ${props.top};` ) }
 	z-index: -1;
 
@@ -100,7 +100,7 @@ export default class Stars extends React.Component {
 		const gradientB = this.getRandomID();
 
 		return (
-			<StarWrapper aria-hidden="true" className={ this.props.className } position={this.props.position} top={this.props.top} opacity={this.props.opacity}>
+			<StarWrapper aria-hidden="true" className={ this.props.className } position={this.props.position} top={this.props.top} transparency={this.props.transparency}>
 				<svg xmlns="http://www.w3.org/2000/svg" width="772" height="511" viewBox="0 0 772 511">
 					<defs>
 						<linearGradient id={ gradientA } x1="50%" x2="50%" y1="100%" y2=".036%">

@@ -44,7 +44,7 @@ const BlogPostList = props => (
 			return (
 				<BlogPostListSection>
 					{ // Display only IF props.limit is set.
-					props.limit && <Stars position="left" opacity=".4" /> }
+					props.limit && <Stars position="left" transparency=".4" /> }
 					{ props.title && <header><h1 className="h3 text-center">{ props.title }</h1></header> }
 					<BlogPostListWrapper>
 						{ blogList.slice(0, props.limit ? props.limit : 6 ).map( post =>{

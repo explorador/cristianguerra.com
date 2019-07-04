@@ -101,8 +101,8 @@ const HomeHero = () => {
 	return (
 		<HomeHeroInnerWrapper>
 			<Stars opacity=".7" />
-			<Stars position="left" opacity=".3" />
-			<Stars position="right" opacity=".3" />
+			<Stars position="left" transparency=".3" />
+			<Stars position="right" transparency=".3" />
 			<HomeHeroTitle>
 				<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
 				<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
