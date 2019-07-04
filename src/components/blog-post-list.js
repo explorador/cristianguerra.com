@@ -10,7 +10,7 @@ const BlogPostListSection = styled.section`
 	padding-bottom: ${ props => rem( 60 ) };
 `
 
-const BlogPostListWrapper = styled.ul`
+const BlogPostListWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -45,7 +45,7 @@ const BlogPostList = props => (
 				<BlogPostListSection>
 					{ // Display only IF props.limit is set.
 					props.limit && <Stars position="left" opacity=".4" /> }
-					{ props.title && <h1 className="h3 text-center">{ props.title }</h1> }
+					{ props.title && <header><h1 className="h3 text-center">{ props.title }</h1></header> }
 					<BlogPostListWrapper>
 						{ blogList.slice(0, props.limit ? props.limit : 6 ).map( post =>{
 							return (
@@ -54,10 +54,9 @@ const BlogPostList = props => (
 						}
 						) }
 					</BlogPostListWrapper>
-					<p className="text-center">
-						{ // Display only IF props.limit is set.
-						props.limit && <Link to="/blog" btnStyle="primary">Go to Blog +</Link> }
-					</p>
+
+					{ // Display only IF props.limit is set.
+					props.limit && <p className="text-center"><Link to="/blog" btnStyle="primary">Go to Blog +</Link></p> }
 				</BlogPostListSection>
 			)
 		}}
