@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "./link.js"
 import styled from "styled-components"
-import { rem, em, rgba, hideVisually } from "polished"
+import { rem, em, rgba } from "polished"
 import GithubIcon from "../images/github.inline.svg"
 
 /**
@@ -9,7 +9,7 @@ import GithubIcon from "../images/github.inline.svg"
  */
 const MainMenuWrapper = styled.ul`
 	display: flex;
-	margin: 0 0 0 auto;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 
@@ -53,10 +53,6 @@ const MainMenuWrapper = styled.ul`
 		max-width: none;
 		height: 1em;
 		fill: #fff;
-
-		& + span {
-			${hideVisually()}
-		}
 	}
 
 	li:first-child {
@@ -75,27 +71,41 @@ const MainMenuWrapper = styled.ul`
 /**
  * NavMenuItem Component
  */
-const NavMenuItem = props => (
-	<li>
-		<Link to={props.to}>
-			{props.icon &&
-				props.icon
-			}
-			<span>{ props.children }</span>
-		</Link>
-	</li>
-)
+const NavMenuItem = props => {
+	if ( props.icon ) {
+		return (
+			<li>
+				<Link aria-label={ props.children } aria-describedby="external" to={props.to}>
+					{ props.icon }
+				</Link>
+			</li>
+		)
+	}
+	return (
+		<li>
+			<Link to={props.to}>
+				{ props.children }
+			</Link>
+		</li>
+	)
+}
+
 
 /**
  * MainMenu Component
  */
 const MainMenu = props => (
-	<MainMenuWrapper style={props.style}>
-		<NavMenuItem to="/blog">Blog</NavMenuItem>
-		<NavMenuItem to="/about">About Me</NavMenuItem>
-		<NavMenuItem to="/contact">Contact</NavMenuItem>
-		<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon />}>GitHub</NavMenuItem>
-	</MainMenuWrapper>
+	<>
+		<nav aria-label="Main Menu">
+			<MainMenuWrapper style={props.style}>
+				<NavMenuItem to="/blog">Blog</NavMenuItem>
+				<NavMenuItem to="/about">About Me</NavMenuItem>
+				<NavMenuItem to="/contact">Contact</NavMenuItem>
+				<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon aria-hidden="true" focusable="false" />}>GitHub</NavMenuItem>
+			</MainMenuWrapper>
+		</nav>
+		<div id="external" className="visuallyhidden" aria-hidden="true">opens an external site</div>
+	</>
 )
 
 export default MainMenu
