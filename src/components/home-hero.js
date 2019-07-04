@@ -1,4 +1,5 @@
 import React from "react"
+import Container from "./container"
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
 import { rem, adjustHue } from "polished"
@@ -7,7 +8,7 @@ import Stars from "./stars"
 /**
  * HomeHeroInnerWrapper styles.
  */
-const HomeHeroInnerWrapper = styled.section`
+const HomeHeroInnerWrapper = styled(Container)`
 	display: flex;
 	align-items: center;
 	padding-top: ${ props => rem( 90 ) };
@@ -99,19 +100,21 @@ const RocketStyled = styled(Rocket)`
  */
 const HomeHero = () => {
 	return (
-		<HomeHeroInnerWrapper>
+		<section>
 			<Stars opacity=".7" />
 			<Stars position="left" transparency=".3" />
 			<Stars position="right" transparency=".3" />
-			<HomeHeroTitle>
-				<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
-				<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
-			</HomeHeroTitle>
-			<PlanetWrapper>
-				<Planet aria-hidden="true" />
-				<RocketStyled />
-			</PlanetWrapper>
-		</HomeHeroInnerWrapper>
+			<HomeHeroInnerWrapper mediumWidth>
+				<HomeHeroTitle>
+					<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
+					<p>a <span className="h6 text-uppercase text-color-primary">Web Developer</span> Launching stuff since 2009</p>
+				</HomeHeroTitle>
+				<PlanetWrapper>
+					<Planet aria-hidden="true" />
+					<RocketStyled />
+				</PlanetWrapper>
+			</HomeHeroInnerWrapper>
+		</section>
 	)
 }
 
