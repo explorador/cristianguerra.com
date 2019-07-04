@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components"
 import { rem } from "polished"
 
-const PageHeaderWrapper = styled.div`
+const PageHeaderWrapper = styled.header`
 	padding-top: ${ props => rem( 70 ) };
 	padding-bottom: ${ props => rem( 70 ) };
 
