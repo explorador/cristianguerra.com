@@ -42,7 +42,6 @@ $headingsBase: poly-pow($typographyScaleRatio, 1) * $baseFontSize; // (ratio^n)*
 }
 
 html {
-	font-family: sans-serif;
 	text-size-adjust: 100%;
 
 	@media only screen and (max-width: 480px) {
@@ -55,7 +54,7 @@ html {
 body {
 	background: $black;
 	color: $white;
-	font-family: 'Inconsolata', monospace;
+	font-family: 'Inconsolata', Menlo, Monaco, monospace;
 	font-size: #{$baseFontSize}px;
 	line-height: 1.75;
 	-webkit-font-smoothing: antialiased; // http://usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
@@ -150,7 +149,6 @@ $textClasses: (
 /**
  * Images styles
  */
-
 img,
 svg {
 	display: block;
