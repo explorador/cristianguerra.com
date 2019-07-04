@@ -10,8 +10,8 @@ import LogoIcon from "../images/logo.inline.svg"
 /**
  * Logo styles.
  */
-const SiteLogoStyles = styled.h1`
-	margin: 0;
+const SiteLogoStyles = styled.div`
+	margin: 0 auto 0 0;
 	font-size: 1em;
 
 	/* Mobile styles */
@@ -108,7 +108,7 @@ export default class Header extends React.Component {
 		return (
 			<HeaderStyled>
 				<HeaderContainerStyled mediumWidth>
-					<SiteLogo siteTitle={this.props.siteTitle} />
+					<SiteLogo aria-hidden="true" siteTitle={this.props.siteTitle} />
 					<MainMenu />
 				</HeaderContainerStyled>
 			</HeaderStyled>
