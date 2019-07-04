@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { rem, rgba } from "polished"
 import Img from "gatsby-image"
 
-const BlogPostWrapper = styled.div`
+const BlogPostWrapper = styled.article`
 	margin: ${ rem( 40 ) } ${ rem( 60 ) };
 	max-width: ${ rem( 440 ) };
 	border: solid 1px ${ props => rgba( props.theme.gray, 0.5 ) };
@@ -23,10 +23,14 @@ const BlogPostWrapper = styled.div`
 	}
 `
 
-const BlogPostTitle = styled.h2`
+const BlogPostBoxHeader = styled.header`
 	padding: ${ rem( 33 ) } ${ rem( 35 ) };
 	margin: auto 0 0;
 	font-weight: 400;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
 `
 
 const BlogPostImage = styled(Img)`
@@ -42,7 +46,7 @@ const BlogPost = props => {
 	return (
 		<BlogPostWrapper>
 			<Link to={props.link}>
-				<BlogPostTitle className="h6 text-capitalize">{props.title}</BlogPostTitle>
+				<BlogPostBoxHeader><h2 className="h6 text-capitalize">{props.title}</h2></BlogPostBoxHeader>
 				<BlogPostImage alt={props.img.description} fixed={props.img.fixed} />
 			</Link>
 		</BlogPostWrapper>
