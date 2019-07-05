@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { rem, rgba } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import Img from "gatsby-image"
 
 const BlogPostWrapper = styled.article`
@@ -10,6 +11,14 @@ const BlogPostWrapper = styled.article`
 	border: solid 1px ${ props => rgba( props.theme.gray, 0.5 ) };
 	border-radius: 5px;
 	transition: border-color ease .2s;
+
+	${ mediaquery('lg') } {
+		margin: ${ rem( 20 ) } ${ rem( 20 ) };
+	}
+
+	${ mediaquery('md-down') } {
+		margin: ${ rem( 15 ) } ${ rem( 15 ) };
+	}
 
 	&:hover {
 		border-color: ${ props => props.theme.white };
@@ -37,7 +46,6 @@ const BlogPostImage = styled(Img)`
 	align-self: flex-end;
 	width: 100%;
 	margin: 0 ${ rem(15) } ${ rem(15) };
-	padding-bottom: 56.01965602%;
 	filter: grayscale(100%);
 	border-radius: 5px;
 `
@@ -47,7 +55,7 @@ const BlogPost = props => {
 		<BlogPostWrapper>
 			<Link to={props.link}>
 				<BlogPostBoxHeader><h2 className="h6 text-capitalize">{props.title}</h2></BlogPostBoxHeader>
-				<BlogPostImage alt={props.img.description} fixed={props.img.fixed} />
+				<BlogPostImage alt={props.img.description} fluid={props.img.fluid} />
 			</Link>
 		</BlogPostWrapper>
 	)

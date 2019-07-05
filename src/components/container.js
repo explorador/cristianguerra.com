@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { rem, em } from 'polished'
+import mediaquery from "../functions/media-queries.js";
 
 /**
  * Container sizes.
@@ -18,7 +19,7 @@ const Container = styled.div`
 	padding-right: ${ props => em( 25, props.theme.baseFontSize ) };
 	padding-left: ${ props => em( 25, props.theme.baseFontSize ) };
 
-	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+	${ mediaquery('sm-down') } {
 		padding-right: ${ props => em( 15, props.theme.baseFontSize ) };
 		padding-left: ${ props => em( 15, props.theme.baseFontSize ) };
 	}

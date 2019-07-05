@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { rem, hideVisually, rgba } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import MainMenu from "./main-menu"
 import Container from "./container"
 import styled from "styled-components"
@@ -16,7 +17,7 @@ const SiteLogoStyles = styled.div`
 	font-size: 1em;
 
 	/* Mobile styles */
-	@media only screen and ( max-width: 767px ) {
+	${ mediaquery('sm-down') } {
 		margin: 0 auto ${ rem( 12 ) };
 	}
 
@@ -32,13 +33,13 @@ const SiteLogoStyles = styled.div`
 	}
 
 	/* Tablet and Mobile styles */
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+	${ mediaquery('md-down') } {
 		span {
 			${ hideVisually() };
 		}
 	}
 
-	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+	${ mediaquery('sm-down') } {
 		svg {
 			max-width: ${ rem( 30 ) };
 		}

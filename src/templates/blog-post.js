@@ -6,6 +6,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { rem } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import Stars from "../components/stars"
 
 /**
@@ -14,6 +15,11 @@ import Stars from "../components/stars"
 const BlogPostHeader = styled.div`
 	padding-top: ${ props => rem( 70 ) };
 	padding-bottom: ${ props => rem( 60 ) };
+
+	${ mediaquery('sm-down') } {
+		padding-top: ${ props => rem( 35 ) };
+		padding-bottom: ${ props => rem( 30 ) };
+	}
 
 	h1 {
 		margin-bottom: 0;
@@ -27,6 +33,10 @@ const BlogPostHeader = styled.div`
 const BlogPostImage = styled(Img)`
 	margin-bottom: ${ rem( 60 ) };
 	filter: grayscale(100%);
+
+	${ mediaquery('sm-down') } {
+		margin-bottom: ${ rem( 30 ) };
+	}
 `
 
 export default ({ data }) => {

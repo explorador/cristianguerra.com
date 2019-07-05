@@ -30,8 +30,8 @@ const BlogPostList = props => (
 						}
 						title
 						postImage {
-							fixed(width: 410, height: 245) {
-								...GatsbyContentfulFixed_noBase64
+							fluid(maxWidth: 410, maxHeight: 245) {
+								...GatsbyContentfulFluid_noBase64
 							}
 							description
 						}

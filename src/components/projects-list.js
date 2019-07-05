@@ -2,6 +2,7 @@ import React from "react"
 import Link from "./link"
 import styled from "styled-components"
 import { rem, rgba } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import Container from "./container"
 import Stars from "./stars"
 import SketchLogo from "../images/sketch-logo.inline.svg"
@@ -53,7 +54,7 @@ const ProjectBoxStyled = styled.li`
 	border-radius: 5px;
 	transition: border-color ease .2s;
 
-	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+	${ mediaquery('sm-down') } {
 		margin: 0 ${rem( 15 )} ${rem( 35 )};
 	}
 

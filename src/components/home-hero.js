@@ -3,6 +3,7 @@ import Container from "./container"
 import Rocket from "../images/rocket.inline.svg"
 import styled from "styled-components"
 import { rem, adjustHue } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import Stars from "./stars"
 
 /**
@@ -14,18 +15,10 @@ const HomeHeroInnerWrapper = styled(Container)`
 	padding-top: ${ props => rem( 90 ) };
 	padding-bottom: ${ props => rem( 60 ) };
 
-	> div {
-		flex-grow: 1;
-	}
-
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+	${ mediaquery('md-down') } {
 		flex-direction: column;
-		padding-top: ${ props => rem( 60 ) };
-		text-align: center;
-	}
-
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
 		padding-top: ${ props => rem( 30 ) };
+		text-align: center;
 		padding-bottom: ${ props => rem( 40 ) };
 	}
 `
@@ -34,8 +27,10 @@ const HomeHeroInnerWrapper = styled(Container)`
  */
 const HomeHeroTitle = styled.div`
 	padding-right: ${ rem( 20 ) };
+	flex-grow: 1;
+	flex-shrink: 0;
 
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+	${ mediaquery('md-down') } {
 		padding-right: 0;
 		padding-bottom: ${ rem( 25 ) };
 	}
@@ -63,7 +58,7 @@ const PlanetWrapper = styled.div`
 	width: 100%;
 	z-index: 10;
 
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+	${ mediaquery('md-down') } {
 		width: 100%;
 		max-width: ${ rem( 344 ) };
 	}
@@ -103,7 +98,7 @@ const HomeHero = () => {
 		<section>
 			<Stars transparency=".7" />
 			<Stars className="hide-xs hide-sm hide-md" position="left" transparency=".3" />
-			<Stars className="hide-xs hide-sm hide-md" position="right" transparency=".3" />
+			<Stars className="hide-xs hide-sm hide-md hide-lg" position="right" transparency=".3" />
 			<HomeHeroInnerWrapper mediumWidth>
 				<HomeHeroTitle>
 					<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>

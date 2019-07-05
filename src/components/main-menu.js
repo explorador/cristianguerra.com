@@ -2,6 +2,7 @@ import React from "react"
 import Link from "./link.js"
 import styled from "styled-components"
 import { rem, em, rgba } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import GithubIcon from "../images/github.inline.svg"
 
 /**
@@ -14,11 +15,11 @@ const MainMenuWrapper = styled.ul`
 	list-style: none;
 
 	/* Tablet styles */
-	@media only screen and ( max-width: ${ props => props.theme.medium }px ) {
+	${ mediaquery('md-down') } {
 		margin-left: ${ props => rem( 25, props.baseFontSize ) };
 	}
 
-	@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+	${ mediaquery('sm-down') } {
 		margin-left: 0;
 	}
 
@@ -30,7 +31,7 @@ const MainMenuWrapper = styled.ul`
 		text-decoration: none;
 		transition: text-shadow ease .3s;
 
-		@media only screen and ( max-width: ${ props => props.theme.small }px ) {
+		${ mediaquery('sm-down') } {
 			padding-right: ${ props => em( 12, props.theme.baseFontSize ) };
 			padding-left: ${ props => em( 12, props.theme.baseFontSize ) };
 		}
