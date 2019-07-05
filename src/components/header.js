@@ -6,6 +6,7 @@ import MainMenu from "./main-menu"
 import Container from "./container"
 import styled from "styled-components"
 import LogoIcon from "../images/logo.inline.svg"
+import LogoText from "../images/cristianguerra.inline.svg"
 
 /**
  * Logo styles.
@@ -16,7 +17,7 @@ const SiteLogoStyles = styled.div`
 
 	/* Mobile styles */
 	@media only screen and ( max-width: 767px ) {
-		margin-bottom: ${ rem( 12 ) };
+		margin: 0 auto ${ rem( 12 ) };
 	}
 
 	a {
@@ -48,7 +49,8 @@ const SiteLogoStyles = styled.div`
  * Logo icon wrapper styles.
  */
  const LogoIconWrapper = styled.div`
-	 max-width: ${rem(50)};
+	max-width: ${rem(50)};
+	margin-right: ${rem(10)};
 `
 
 /**
@@ -61,7 +63,8 @@ const SiteLogo = (props) => (
 			<LogoIconWrapper>
 				<LogoIcon />
 			</LogoIconWrapper>
-			<span className="h6">{ props.siteTitle }</span>
+			<LogoText />
+			<span className="visuallyhidden">{ props.siteTitle }</span>
 		</Link>
 	</SiteLogoStyles>
 )
