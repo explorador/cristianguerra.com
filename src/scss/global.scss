@@ -21,10 +21,23 @@
 // Typography Scale Ratio: https://www.modularscale.com/?19&px&1.2
 $typographyScaleRatio: 1.2;
 // H tags "font-size" base.
-$headingsBase: poly-pow($typographyScaleRatio, 1) * $baseFontSize; // (ratio^n)*base
+// Large screens:
+$LargeHeadingsBase: poly-pow($typographyScaleRatio, 1) * $baseFontSize; // (ratio^n)*base
+// Extra Small screens:
+$ExtraSmallHeadingsBase: poly-pow($typographyScaleRatio, -1) * $baseFontSize; // (ratio^n)*base
 
-// Turn "Responsive debug mode" on/off.
-$debugResponsive: false;
+// Headings sizes mixin.
+@mixin headingsSizes($base) {
+	@for $n from 1 through 6 {
+		// Convert 1 to 6, 2 to 5, etc.
+		$reverseN: 6 - $n + 1; // ArrayLength-n+1
+
+		h#{$n},
+		.h#{$n} {
+			font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $base); // (ratio^n)*base
+		}
+	}
+}
 
 /**
  * em function
@@ -33,6 +46,19 @@ $debugResponsive: false;
 @function em($pixels, $context: $baseFontSize) {
 	@return #{ $pixels / $context }em;
 }
+
+/**
+ * Responsive variables.
+ */
+$screenSizes: (
+	xs: $extraSmall,
+	sm: $small,
+	md: $medium,
+	lg: $large,
+);
+
+// Turn "Responsive debug mode" on/off.
+$debugResponsive: true;
 
 /*=============================================
 = Typography
@@ -91,6 +117,22 @@ a {
  * Headings h1-h6.
  */
 
+ // Setting up heading sizes for "large" screens.
+@media only screen and (min-width: #{map-get($screenSizes, 'sm')+1}px) {
+	@include headingsSizes($LargeHeadingsBase);
+}
+
+// Setting up heading sizes for "small" and "medium" screens.
+@media only screen and (min-width: #{map-get($screenSizes, 'xs')+1}px) and (max-width: #{map-get($screenSizes, 'sm')}px) {
+	@include headingsSizes($baseFontSize);
+}
+
+// Setting up heading sizes for "extra-small" screens.
+@media only screen and (max-width: #{map-get($screenSizes, 'xs')}px) {
+	@include headingsSizes($ExtraSmallHeadingsBase);
+}
+
+// Styles for headings with class only. Ex: .h1 vs h1
 %heading-styles-with-classes {
 	margin-top: 0;
 	margin-bottom: .5em;
@@ -98,23 +140,17 @@ a {
 	text-rendering: optimizeLegibility;
 }
 
+// Styles for heading tags: h1, h2, etc
 %heading-styles-only {
 	text-transform: uppercase;
 }
 
+// Styles for heading after p tag.
 %heading-after-paragraph {
 	margin-top: 1em;
 }
 
 @for $n from 1 through 6 {
-	// Convert 1 to 6, 2 to 5, etc.
-	$reverseN: 6 - $n + 1; // ArrayLength-n+1
-
-	h#{$n},
-	.h#{$n} {
-		font-size: em(poly-pow($typographyScaleRatio, $reverseN) * $headingsBase); // (ratio^n)*base
-	}
-
 	h#{$n},
 	.h#{$n} {
 		@extend %heading-styles-with-classes;
@@ -183,18 +219,11 @@ svg {
  * Hide element on specific screen size.
  * Ex: .hide-xs
  */
-$responsiveSize: (
-	xs: $extraSmall,
-	sm: $small,
-	md: $medium,
-	lg: $large,
-);
-
-@each $screen, $size in $responsiveSize {
+@each $screen, $size in $screenSizes {
 	// Getting current index value.
-	$i: index(($responsiveSize), ($screen $size));
+	$i: index(($screenSizes), ($screen $size));
 	// Setting "min-width" value based on "previous iteration value" + 1
-	$minWidth: if($i - 1 > 0 , "min-width: #{nth(map-values($responsiveSize), $i - 1) + 1}px", "min-width: 1px");
+	$minWidth: if($i - 1 > 0 , "min-width: #{nth(map-values($screenSizes), $i - 1) + 1}px", "min-width: 1px");
 
 	@media only screen and (#{$minWidth}) and (max-width: #{$size}px) {
 		.hide-#{$screen} {
