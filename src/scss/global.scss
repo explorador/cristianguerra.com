@@ -187,6 +187,7 @@ $responsiveSize: (
 	xs: $extraSmall,
 	sm: $small,
 	md: $medium,
+	lg: $large,
 );
 
 @each $screen, $size in $responsiveSize {
