@@ -21,6 +21,8 @@ const screens = {
  * Usage:
  * mediaquery(sm-down) = returns only "max-width" value in media query
  * mediaquery(sm) = returns both "min-width" and "max-width" values in media query.
+ *
+ * Note: You can turn "responsive debug mode" on/off in global.scss. variable: $debugResponsive
  */
 const mediaquery = screen => {
 	// If parameter has the '-down' string
