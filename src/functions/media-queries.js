@@ -34,7 +34,7 @@ const mediaquery = screen => {
 		// Get current index.
 		const index = Object.keys(screens).indexOf(screen);
 		// Get "min-width" value (Previous index element + 1).
-		const minWidth = index > 0 ? `(min-width: ${screens[Object.keys(screens)[index - 1]]+ 1}) and ` : '';
+		const minWidth = index > 0 ? `(min-width: ${screens[Object.keys(screens)[index - 1]]+ 1}px) and ` : '';
 		// Return both min-width and max-width (Only if previous index element is not 0).
 		return `@media only screen and ${minWidth}(max-width: ${screens[screen]}px)`;
 	}
