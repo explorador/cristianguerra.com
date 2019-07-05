@@ -132,11 +132,12 @@ a {
 	@include headingsSizes($ExtraSmallHeadingsBase);
 }
 
-// Styles for headings with class only. Ex: .h1 vs h1
+// Styles for headings and heading class. Ex: .h1 AND h1.
 %heading-styles-with-classes {
 	margin-top: 0;
 	margin-bottom: .5em;
 	line-height: 1.1;
+	word-spacing: em(-3);
 	text-rendering: optimizeLegibility;
 }
 
