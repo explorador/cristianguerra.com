@@ -102,8 +102,8 @@ const HomeHero = () => {
 	return (
 		<section>
 			<Stars transparency=".7" />
-			<Stars position="left" transparency=".3" />
-			<Stars position="right" transparency=".3" />
+			<Stars className="hide-xs hide-sm hide-md" position="left" transparency=".3" />
+			<Stars className="hide-xs hide-sm hide-md" position="right" transparency=".3" />
 			<HomeHeroInnerWrapper mediumWidth>
 				<HomeHeroTitle>
 					<h1><span className="text-capitalize">Hi, I’m</span> Cristian Guerra</h1>
