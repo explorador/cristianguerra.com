@@ -100,9 +100,9 @@ const MainMenu = props => (
 		<nav aria-label="Main Menu">
 			<MainMenuWrapper style={props.style}>
 				<NavMenuItem to="/blog">Blog</NavMenuItem>
-				<NavMenuItem to="/about">About Me</NavMenuItem>
+				<NavMenuItem to="/about">About</NavMenuItem>
 				<NavMenuItem to="/contact">Contact</NavMenuItem>
-				<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon aria-hidden="true" focusable="false" />}>GitHub</NavMenuItem>
+				<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon />}>GitHub</NavMenuItem>
 			</MainMenuWrapper>
 		</nav>
 		<div id="external" className="visuallyhidden" aria-hidden="true">opens an external site</div>
