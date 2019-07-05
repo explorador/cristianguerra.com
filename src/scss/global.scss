@@ -175,3 +175,27 @@ svg {
 	width: 1px;
 	white-space: nowrap;
 }
+
+
+/**
+ * Hide element on specific size.
+ * Ex: .hide-xs
+ */
+$responsiveSize: (
+	xs: $extraSmall,
+	sm: $small,
+	md: $medium,
+);
+
+@each $size, $screen in $responsiveSize {
+	// Getting current index value.
+	$i: index(($responsiveSize), ($size $screen));
+	// Setting "min-width" value based on "previous iteration value" + 1
+	$minWidth: if($i - 1 > 0 , "min-width: #{nth(map-values($responsiveSize), $i - 1) + 1}px", "min-width: 1px");
+
+	@media only screen and (#{$minWidth}) and (max-width: #{$screen}px) {
+		.hide-#{$size} {
+			display: none;
+		}
+	}
+}
