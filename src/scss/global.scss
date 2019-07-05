@@ -201,7 +201,7 @@ $responsiveSize: (
 		}
 
 		// Debug message.
-		// Shows your current screen on the top right corner.
+		// Shows your current "screen size" on the top right corner.
 		@if $debugResponsive {
 			body:before {
 				display: block;
