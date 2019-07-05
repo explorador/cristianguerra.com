@@ -1,5 +1,5 @@
 /*=============================================
-= Colors
+= Variables
 =============================================*/
 
 /**
@@ -11,6 +11,7 @@
  * Dx = darker
  */
 
+// Colors.
 $black:           #151313;
 $red:             #f33;
 $redL:            #f55f44;
@@ -20,7 +21,11 @@ $grayL:           #858694;
 $white:           #fff;
 $primaryColor:    $red;
 $primaryColorL:   $redL;
+
+// Typography.
 $baseFontSize:    21;
+
+// Screen sizes.
 $large:           1400;
 $medium:          1024;
 $small:           767;
