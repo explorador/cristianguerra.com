@@ -101,7 +101,7 @@ const RocketStyled = styled(Rocket)`
 const HomeHero = () => {
 	return (
 		<section>
-			<Stars opacity=".7" />
+			<Stars transparency=".7" />
 			<Stars position="left" transparency=".3" />
 			<Stars position="right" transparency=".3" />
 			<HomeHeroInnerWrapper mediumWidth>
