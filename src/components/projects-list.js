@@ -131,12 +131,6 @@ const ProjectList = () => (
 				/>
 				<ProjectBox
 					link="#"
-					icon={<FirefoxLogo />}
-					title="Firefox Developer Custom Theme"
-					subtitle="Inspired on Ayu theme"
-				/>
-				<ProjectBox
-					link="#"
 					icon={<RocketIcon />}
 					title="Local by flywheel Alfred Workflow"
 					subtitle="SSH and more"
