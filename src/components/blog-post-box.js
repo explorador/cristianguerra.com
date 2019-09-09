@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 
 const BlogPostWrapper = styled.article`
 	margin: ${ rem( 40 ) } ${ rem( 60 ) };
+	width: 100%;
 	max-width: ${ rem( 440 ) };
 	border: solid 1px ${ props => rgba( props.theme.gray, 0.5 ) };
 	border-radius: 5px;
