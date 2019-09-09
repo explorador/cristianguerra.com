@@ -6,7 +6,6 @@ import mediaquery from "../functions/media-queries.js";
 import Container from "./container"
 import Stars from "./stars"
 import SketchLogo from "../images/sketch-logo.inline.svg"
-import FirefoxLogo from "../images/firefox-logo.inline.svg"
 import RocketIcon from "../images/rocket-icon.inline.svg"
 
 /**
