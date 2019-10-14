@@ -56,7 +56,7 @@ const BlogPost = props => {
 		<BlogPostWrapper>
 			<Link to={props.link}>
 				<BlogPostBoxHeader><h2 className="h6 text-capitalize">{props.title}</h2></BlogPostBoxHeader>
-				<BlogPostImage alt={props.img.description} fluid={props.img.fluid} />
+				{props.img && <BlogPostImage alt={props.img.description} fluid={props.img.fluid} />}
 			</Link>
 		</BlogPostWrapper>
 	)
