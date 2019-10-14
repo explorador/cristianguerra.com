@@ -20,6 +20,7 @@ const screens = {
  *
  * Usage:
  * mediaquery(sm-down) = returns only "max-width" value in media query
+ * mediaquery(sm-up) = return only "min-width" value in media query.
  * mediaquery(sm) = returns both "min-width" and "max-width" values in media query.
  *
  * Note: You can turn "responsive debug mode" on/off in global.scss. variable: $debugResponsive
@@ -32,11 +33,16 @@ const mediaquery = screen => {
 		return `@media only screen and (max-width: ${screenSize}px)`;
 	} else {
 		// Get current index.
-		const index = Object.keys(screens).indexOf(screen);
+		const index = Object.keys(screens).indexOf(screen.replace(/-\w*/g, ''));
 		// Get "min-width" value (Previous index element + 1).
-		const minWidth = index > 0 ? `(min-width: ${screens[Object.keys(screens)[index - 1]]+ 1}px) and ` : '';
+		const minWidth = index > 0 ? `(min-width: ${screens[Object.keys(screens)[index - 1]]+ 1}px)` : '';
+
+		// Get min-width value.
+		if ( screen.includes( '-up' ) ) {
+			return index > 0 ? `@media only screen and ${minWidth}` : '@media only screen and (min-width: 0px)';
+		}
 		// Return both min-width and max-width (Only if previous index element is not 0).
-		return `@media only screen and ${minWidth}(max-width: ${screens[screen]}px)`;
+		return `@media only screen and ${minWidth ? `${minWidth} and ` : '' }(max-width: ${screens[screen]}px)`;
 	}
 }
 
