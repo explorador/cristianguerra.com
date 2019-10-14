@@ -2,8 +2,8 @@ import React from "react"
 import Link from "./link.js"
 import styled from "styled-components"
 import { rem, em, rgba } from "polished"
-import mediaquery from "../functions/media-queries.js";
-import GithubIcon from "../images/github.inline.svg"
+import mediaquery from "../functions/media-queries.js"
+import Icon from "../components/icon"
 
 /**
  * Styles for "ul" main menu "wrapper" element.
@@ -102,7 +102,7 @@ const MainMenu = props => (
 				<NavMenuItem to="/blog">Blog</NavMenuItem>
 				<NavMenuItem to="/about">About</NavMenuItem>
 				<NavMenuItem to="/contact">Contact</NavMenuItem>
-				<NavMenuItem to="https://github.com/explorador" icon={<GithubIcon />}>GitHub</NavMenuItem>
+				<NavMenuItem to="https://github.com/explorador" icon={<Icon src="github" />}>GitHub</NavMenuItem>
 			</MainMenuWrapper>
 		</nav>
 		<div id="external" className="visuallyhidden" aria-hidden="true">opens an external site</div>

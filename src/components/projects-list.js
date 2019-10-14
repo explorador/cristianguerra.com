@@ -5,8 +5,7 @@ import { rem, rgba } from "polished"
 import mediaquery from "../functions/media-queries.js";
 import Container from "./container"
 import Stars from "./stars"
-import SketchLogo from "../images/sketch-logo.inline.svg"
-import RocketIcon from "../images/rocket-icon.inline.svg"
+import Icon from "../components/icon"
 
 /**
  * Project List "section" wrapper styles.
@@ -120,17 +119,16 @@ const ProjectList = () => (
 		<Stars position="right" top="0" transparency=".3" />
 		<Container mediumWidth>
 			<ProjectListTitle className="h3 text-center">Stuff From My Lab</ProjectListTitle>
-
 			<ProjectListWrapper>
 				<ProjectBox
 					link="#"
-					icon={<SketchLogo />}
+					icon={<Icon src="sketch-logo" />}
 					title="Copy Text Plugin for Sketch"
 					subtitle="Copy text from multiple layers"
 				/>
 				<ProjectBox
 					link="#"
-					icon={<RocketIcon />}
+					icon={<Icon src="rocket-icon" />}
 					title="Local by flywheel Alfred Workflow"
 					subtitle="SSH and more"
 				/>
