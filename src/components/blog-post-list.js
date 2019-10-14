@@ -22,7 +22,10 @@ const BlogPostList = props => (
 	<StaticQuery
 		query={graphql`
 			query {
-				allContentfulBlogPost(limit: 6) {
+				allContentfulBlogPost(sort: {
+					order: DESC,
+					fields: createdAt
+				}, limit: 6) {
 					nodes {
 						id
 						slug {
