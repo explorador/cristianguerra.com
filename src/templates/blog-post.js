@@ -47,8 +47,8 @@ export default ({ data }) => {
 			<Container>
 				<Stars position="center" opacity="0.5" />
 				<BlogPostHeader><h1 className="h3 text-center">{post.title}</h1></BlogPostHeader>
-				<BlogPostImage alt={post.postImage.description} fluid={post.postImage.fluid} />
-				<div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />
+				{post.postImage && <BlogPostImage alt={post.postImage.description} fluid={post.postImage.fluid} />}
+				{post.content.childMarkdownRemark.html && <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />}
 			</Container>
 		</Layout>
 	)
