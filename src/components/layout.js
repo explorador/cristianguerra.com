@@ -12,6 +12,7 @@ import Container from "./container"
 import styled from "styled-components"
 import { rem } from "polished"
 import Header from "./header"
+import Mountains from "../images/mountains.inline.svg"
 
 /**
  * Styles for site wrapper div.
@@ -33,13 +34,19 @@ const MainStyled = styled.main`
  * Footer styles.
  */
 const Footer = styled.footer`
-	padding: ${ rem(30) } 0;
+	padding: ${ rem(30) } 0 0;
 
 	p {
 		margin-bottom: 0;
 	}
 `
 
+const FooterDisclaimer = styled.div`
+	max-width: ${ rem( 450 ) };
+	margin: ${ rem( 20 ) } auto ${ rem( 15 ) };
+	padding: ${ rem( 20 ) } ${ rem( 30 ) };
+	background-color: ${ props => props.theme.grayD };
+`
 
 /**
  * Layout Component
@@ -63,7 +70,12 @@ const Layout = ({ children }) => (
 				<Footer>
 					<Container className="text-center">
 						<p className="text-small">&copy; {new Date().getFullYear()} {data.site.siteMetadata.author_url}</p>
+
+						<FooterDisclaimer className="text-small">
+							<p>This site is built with Gatsby, hosted with netlify and code hosted on Github and Gitlab.</p>
+						</FooterDisclaimer>
 					</Container>
+					<Mountains />
 				</Footer>
 			</SiteWrapper>
 		)}
