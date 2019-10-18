@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import mediaquery from "../functions/media-queries.js";
 import { TweenMax, CSSPlugin } from "gsap/TweenMax"
 /* eslint-disable-next-line */
 const plugins = [ CSSPlugin ] // "Prevents Tree Shaking" on Webpack.
@@ -11,6 +12,10 @@ const OrionStyled = styled.div`
 	position: absolute;
 	left: 5%;
 	max-width: 25%;
+
+	${ mediaquery('sm-down') } {
+		display: none;
+	}
 
 	.orion-star {
 		fill: url(#orion-star-gradient) #b1b1b1;
