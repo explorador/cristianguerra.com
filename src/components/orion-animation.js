@@ -47,7 +47,7 @@ export default class orion extends React.Component {
 
 	render() {
 		return (
-			<OrionStyled>
+			<OrionStyled aria-hidden="true">
 				<svg width="504px" height="511px" viewBox="0 0 504 511" version="1.1"
 				xmlns="http://www.w3.org/2000/svg">
 					<title>orion</title>
