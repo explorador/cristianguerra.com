@@ -8,6 +8,7 @@ import Container from "../components/container"
 import PageHeader from "../components/page-header"
 import AboutAnimation from "../components/about-animation"
 import ProjectList from "../components/projects-list"
+import Space from "../components/space"
 import Icon from "../components/icon"
 
 /**
@@ -29,8 +30,9 @@ const SkillsList = styled.ul`
 
 	svg {
 		display: block;
-		margin: 0 auto ${ rem(10) };
+		height: 100%;
 		max-height: ${ rem(60) };
+		margin: 0 auto ${ rem(10) };
 		fill: ${ props => props.theme.grayL };
 	}
 `
@@ -86,6 +88,7 @@ export default () => (
 
 						{page.content.childMarkdownRemark.wordCount.words > 0 && <div dangerouslySetInnerHTML={{ __html: page.content.childMarkdownRemark.html }} />}
 
+						<Space height="40" />
 						<h2 className="h5 text-center">Technical Skills and Knowledge</h2>
 
 						<SkillsList>
