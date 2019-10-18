@@ -34,6 +34,15 @@ export default class AboutAnimation extends React.Component {
 			repeat: -1,
 		}, .5 );
 
+		// Fire Ashes animation.
+		this.FireAshes = [ this.FireAsh1, this.FireAsh2, this.FireAsh3, this.FireAsh4, this.FireAsh5, this.FireAsh6, this.FireAsh7 ];
+		TweenMax.staggerTo( this.FireAshes, 1, {
+			scale: .9,
+			y: '-10px',
+			repeat: -1,
+			opacity: .3,
+		}, .4 );
+
 		// Fire animation.
 		const fireElements = [ this.Fire, this.GuyLight1, this.GuyLight2, this.FireAsh ];
 		let fireElementsAnimation = new TimelineMax({ repeat: -1, repeatDelay: 1, yoyo: true });
@@ -84,7 +93,13 @@ export default class AboutAnimation extends React.Component {
 						<path ref={ e => this.InnerFireLeft = e } d="M617 313.509c0 3.282-1.567 2.377-3.5 2.377s-3.5.905-3.5-2.377c0-3.283 1-6.509 2-9.509 2 4 5 6.226 5 9.509z" fill="#000" opacity="0"/>
 						<path ref={ e => this.InnerFireRight = e } d="M617 313.509c0 3.282-1.567 2.377-3.5 2.377s-3.5.905-3.5-2.377c0-3.283 2-6.509 5-9.509 0 5 2 6.226 2 9.509z" fill="#000" opacity="0"/>
 						<g ref={ e => this.FireAsh = e } fill="#FF6584">
-							<path d="M623 291s2.04-1.514 2-3M607 278s-.634-2.224-2-3M592 248s-.634-2.224-2-3M610 288s-.634-2.224-2-3M608 253s-.634-2.224-2-3M604 266s-.634-2.224-2-3M622 313s2.04-1.514 2-3M624 301s2.04-1.514 2-3"/>
+							<path ref={ e => this.FireAsh1 = e } d="M623 291s2.04-1.514 2-3"/>
+							<path ref={ e => this.FireAsh2 = e } d="M607 278s-.634-2.224-2-3"/>
+							<path ref={ e => this.FireAsh3 = e } d="M592 248s-.634-2.224-2-3"/>
+							<path ref={ e => this.FireAsh4 = e } d="M608 253s-.634-2.224-2-3"/>
+							<path ref={ e => this.FireAsh5 = e } d="M604 266s-.634-2.224-2-3"/>
+							<path ref={ e => this.FireAsh6 = e } d="M622 313s2.04-1.514 2-3"/>
+							<path ref={ e => this.FireAsh7 = e } d="M624 301s2.04-1.514 2-3"/>
 						</g>
 						<path ref={ e => this.MoonLight = e } fill="#F2F2F2" opacity=".1" d="M360.594 163.412l-15.49-14.256-.138.035-6.203-5.644-.3-.088.323-.122-65.965-60.708L209.116 24l-32.46 17.234-2.656.589 38.901 58.765L360.127 323H534L360.595 163.413z"/>
 						<circle ref={ e => this.Moon = e } fill="#F2F2F2" cx="191" cy="32" r="19"/>
