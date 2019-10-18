@@ -12,14 +12,13 @@ import Stars from "./stars"
 const HomeHeroInnerWrapper = styled(Container)`
 	display: flex;
 	align-items: center;
-	padding-top: ${ props => rem( 90 ) };
-	padding-bottom: ${ props => rem( 60 ) };
+	padding-top: ${ rem( 90 ) };
+	padding-bottom: ${ rem( 60 ) };
 
 	${ mediaquery('md-down') } {
 		flex-direction: column;
-		padding-top: ${ props => rem( 30 ) };
+		padding-top: ${ rem( 30 ) };
 		text-align: center;
-		padding-bottom: ${ props => rem( 40 ) };
 	}
 `
 /**
@@ -59,6 +58,8 @@ const PlanetWrapper = styled.div`
 	z-index: 10;
 
 	${ mediaquery('md-down') } {
+		padding-right: ${ rem( 25 ) };
+		padding-left: ${ rem( 25 ) };
 		width: 100%;
 		max-width: ${ rem( 344 ) };
 	}

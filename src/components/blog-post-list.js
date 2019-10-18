@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { rem } from "polished"
+import mediaquery from "../functions/media-queries.js";
 import BlogPost from "./blog-post-box"
 import Link from "./link"
 import { StaticQuery, graphql } from "gatsby"
@@ -8,6 +9,10 @@ import Stars from "./stars"
 
 const BlogPostListSection = styled.section`
 	padding-bottom: ${ props => rem( 60 ) };
+
+	${ mediaquery('sm-down') } {
+		padding-bottom: ${ props => rem( 20 ) };
+	}
 `
 
 const BlogPostListWrapper = styled.div`

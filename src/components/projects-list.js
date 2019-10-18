@@ -12,8 +12,13 @@ import Icon from "../components/icon"
  */
 const ProjectListStyled = styled.section`
 	position: relative;
-	padding-top: ${ props => rem( 80 ) };
-	padding-bottom: ${ props => rem( 80 ) };
+	padding-top: ${ rem( 80 ) };
+	padding-bottom: ${ rem( 80 ) };
+
+	${ mediaquery('sm-down') } {
+		padding-top: ${ rem( 60 ) };
+		padding-bottom: ${ rem( 40 ) };
+	}
 
 	&:last-child {
 		position: sticky;
@@ -27,6 +32,10 @@ const ProjectListStyled = styled.section`
  */
 const ProjectListTitle = styled.h1`
 	margin-bottom: ${ rem( 60 ) };
+
+	${ mediaquery('sm-down') } {
+		margin-bottom: ${ rem( 30 ) };
+	}
 `
 
 /**
@@ -59,7 +68,7 @@ const ProjectBoxStyled = styled.li`
 	svg {
 		margin-right: auto;
 		margin-left: auto;
-		margin-bottom: ${ props => rem( 17 ) };
+		margin-bottom: ${ rem( 17 ) };
 		fill: ${ props => props.theme.gray };
 		transition: fill ease .2s;
 	}
@@ -85,7 +94,7 @@ const ProjectBoxStyled = styled.li`
  * Project title styles.
  */
 const ProjectTitle = styled.h3`
-	margin-bottom: ${ props => rem( 5 ) };
+	margin-bottom: ${ rem( 5 ) };
 `
 
 /**
