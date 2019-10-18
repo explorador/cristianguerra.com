@@ -10,6 +10,7 @@ import AboutAnimation from "../components/about-animation"
 import ProjectList from "../components/projects-list"
 import Space from "../components/space"
 import Icon from "../components/icon"
+import Stars from "../components/stars"
 
 /**
  * Styles for SkillsList component.
@@ -90,6 +91,7 @@ export default () => (
 
 						<Space height="40" />
 						<h2 className="h5 text-center">Technical Skills and Knowledge</h2>
+						<Stars position="left" transparency=".3" />
 
 						<SkillsList>
 							<li><Skill name="css3" /></li>
