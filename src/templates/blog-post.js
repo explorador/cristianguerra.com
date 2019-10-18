@@ -7,6 +7,7 @@ import Img from "gatsby-image"
 import styled from "styled-components"
 import { rem } from "polished"
 import mediaquery from "../functions/media-queries.js";
+import Space from "../components/space"
 import Stars from "../components/stars"
 
 /**
@@ -49,6 +50,7 @@ export default ({ data }) => {
 				<BlogPostHeader><h1 className="h3 text-center">{post.title}</h1></BlogPostHeader>
 				{post.postImage && <BlogPostImage alt={post.postImage.description} fluid={post.postImage.fluid} />}
 				{post.content.childMarkdownRemark.html && <div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html }} />}
+				<Space height="30" />
 			</Container>
 		</Layout>
 	)
