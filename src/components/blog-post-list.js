@@ -64,7 +64,7 @@ const BlogPostList = props => (
 					</BlogPostListWrapper>
 
 					{ // Display only IF props.limit is set.
-					props.limit && <p className="text-center"><Link to="/blog" btnStyle="primary">Go to Blog +</Link></p> }
+					props.limit && <p className="text-center"><Link to="/blog" btnStyle="primaryColor">Go to Blog +</Link></p> }
 				</BlogPostListSection>
 			)
 		}}
