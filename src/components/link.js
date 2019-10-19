@@ -1,6 +1,6 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
-import { em, darken } from "polished"
+import { em, rem, darken } from "polished"
 import styled from "styled-components"
 
 /**
@@ -36,17 +36,31 @@ const PlainLink = ({ children, to, activeClassName, partiallyActive, btnStyle, .
 const Link = styled(PlainLink)`
 	${ props => typeof props.btnStyle !== 'undefined' &&`
 		display: inline-block;
-		padding: ${em( 12, props.theme.baseFontSize )} ${em( 25, props.theme.baseFontSize )};
-		background-color: ${ props.theme[`${props.btnStyle}Color`] };
+		margin-bottom: ${ em( 10 ) };
+		padding: ${ em( 12, props.theme.baseFontSize )} ${em( 25, props.theme.baseFontSize ) };
+		background-color: ${ props.theme[`${props.btnStyle}`] };
 		font-weight: 700;
 		text-decoration: none;
 		text-transform: uppercase;
 		line-height: 1.1;
 		border-radius: 5px;
 		transition: box-shadow ease .2s;
+		${ props.btnStyle === 'white' && `color: ${ props.theme[`black`] }` };
+		${ props.btnStyle === 'white' ? `svg { fill: ${ props.theme[`black`] } }` : 'svg { fill: white }' };
 
 		&:hover {
-			box-shadow: 0 0 14px 0 ${ darken( '0.2', props.theme[`${props.btnStyle}Color`] ) };
+			box-shadow: 0 0 14px 0 ${ darken( '0.2', props.theme[`${props.btnStyle}`] ) };
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		svg {
+			position: relative;
+			top: ${ rem( -1 ) };
+			margin-right: ${ em( 5 ) };
+			vertical-align: top;
 		}
 	`}
 `
