@@ -16,7 +16,7 @@ import Stars from "../components/stars"
  * <BlogPostHeader /> styles.
  */
 const BlogPostHeader = styled.div`
-	padding-top: ${ props => rem( 60 ) };
+	padding-top: ${ props => rem( 30 ) };
 	padding-bottom: ${ props => rem( 60 ) };
 
 	${ mediaquery('sm-down') } {
