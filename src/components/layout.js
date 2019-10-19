@@ -13,6 +13,8 @@ import styled from "styled-components"
 import { rem } from "polished"
 import Header from "./header"
 import Mountains from "../images/mountains.inline.svg"
+import Icon from "../components/icon"
+import Link from "../components/link"
 
 /**
  * Styles for site wrapper div.
@@ -46,6 +48,19 @@ const FooterDisclaimer = styled.div`
 	margin: ${ rem( 20 ) } auto ${ rem( 15 ) };
 	padding: ${ rem( 20 ) } ${ rem( 30 ) };
 	background-color: ${ props => props.theme.grayD };
+
+	a {
+		text-decoration: none;
+	}
+
+	svg {
+		position: relative;
+		top: ${ rem( -1 ) };
+		margin-right: ${ rem( 5 ) };
+		max-width: ${ rem( 12 ) };
+		vertical-align: middle;
+		fill: white;
+	}
 `
 
 /**
@@ -72,7 +87,7 @@ const Layout = ({ children }) => (
 						<p className="text-small">&copy; {new Date().getFullYear()} {data.site.siteMetadata.author_url}</p>
 
 						<FooterDisclaimer className="text-small">
-							<p>This site is built with Gatsby, hosted with netlify and code hosted on Github and Gitlab.</p>
+							<p>This site is built with <Link to="https://www.gatsbyjs.org/"><Icon src="gatsby" />Gatsby</Link>, hosted with <Link to="https://www.netlify.com/"><Icon src="netlify" />Netlify</Link> and code hosted on <Link to="https://github.com/explorador/cristianguerra.com"><Icon src="github" />Github</Link> and <Link to="https://gitlab.com/explorador20/cristianguerra-com"><Icon src="gitlab" />Gitlab</Link>.</p>
 						</FooterDisclaimer>
 					</Container>
 					<Mountains />
