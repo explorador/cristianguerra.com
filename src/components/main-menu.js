@@ -103,6 +103,7 @@ const MainMenu = props => (
 				<NavMenuItem to="/about">About</NavMenuItem>
 				<NavMenuItem to="/contact">Contact</NavMenuItem>
 				<NavMenuItem to="https://github.com/explorador" icon={<Icon src="github" />}>GitHub</NavMenuItem>
+				<NavMenuItem to="https://gitlab.com/explorador20" icon={<Icon src="gitlab" />}>Gitlab</NavMenuItem>
 			</MainMenuWrapper>
 		</nav>
 		<div id="external" className="visuallyhidden" aria-hidden="true">opens an external site</div>
