@@ -130,13 +130,13 @@ const ProjectList = () => (
 			<ProjectListTitle className="h3 text-center">Stuff From My Lab</ProjectListTitle>
 			<ProjectListWrapper>
 				<ProjectBox
-					link="#"
+					link="/copy-text-plugin"
 					icon={<Icon src="sketch-logo" />}
 					title="Copy Text Plugin for Sketch"
 					subtitle="Copy text from multiple layers"
 				/>
 				<ProjectBox
-					link="#"
+					link="/local-by-flywheel-workflow"
 					icon={<Icon src="rocket-icon" />}
 					title="Local by flywheel Alfred Workflow"
 					subtitle="SSH and more"
