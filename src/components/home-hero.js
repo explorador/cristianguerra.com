@@ -72,7 +72,7 @@ const Planet = styled.div`
 	width: 100%;
 	padding-bottom: 100%;
 	background-color: ${props => props.theme.primaryColorL};
-	background-image: linear-gradient(180deg, ${props => adjustHue(20, props.theme.primaryColorL)} 0%, ${props => props.theme.primaryColorL} 84%);
+	background-image: linear-gradient(180deg, ${ props => props.theme.primaryColorL && adjustHue(20, props.theme.primaryColorL)} 0%, ${props => props.theme.primaryColorL } 84%);
 	border-radius: 50%;
 	z-index: -2;
 `
