@@ -79,7 +79,7 @@ const HeaderStyled = styled.header`
 	flex-shrink: 0;
 	z-index: 99;
 	top: 0;
-	background-color: ${ props => rgba( props.theme.black, .95 ) };
+	background-color: ${ props => props.theme.black && rgba( props.theme.black, .95 ) };
 `
 
 /**

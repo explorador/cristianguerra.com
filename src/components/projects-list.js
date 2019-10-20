@@ -57,7 +57,7 @@ const ProjectBoxStyled = styled.li`
 	margin: 0 ${rem( 45 )} ${rem( 45 )};
 	width: ${ rem( 220 ) };
 	text-align: center;
-	border: solid 1px ${ props => rgba( props.theme.gray, 0.5 ) };
+	border: solid 1px ${ props => props.theme.gray && rgba( props.theme.gray, 0.5 ) };
 	border-radius: 5px;
 	transition: border-color ease .2s;
 

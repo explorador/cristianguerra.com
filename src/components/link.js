@@ -49,7 +49,7 @@ const Link = styled(PlainLink)`
 		${ props.btnStyle === 'white' ? `svg { fill: ${ props.theme[`black`] } }` : 'svg { fill: white }' };
 
 		&:hover {
-			box-shadow: 0 0 14px 0 ${ darken( '0.2', props.theme[`${props.btnStyle}`] ) };
+			box-shadow: ${ props.theme[`${props.btnStyle}`] && `0 0 14px 0 ${darken( '0.2', props.theme[`${props.btnStyle}`] )}` };
 		}
 
 		&:last-child {
