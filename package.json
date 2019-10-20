@@ -31,7 +31,8 @@
     "sass-extract-js": "^0.4.0",
     "sass-extract-loader": "^1.1.0",
     "styled-components": "^4.2.1",
-    "typeface-inconsolata": "0.0.72"
+    "typeface-inconsolata": "0.0.72",
+    "snyk": "^1.236.0"
   },
   "devDependencies": {
     "node-normalize-scss": "^8.0.0",
@@ -49,7 +50,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -57,5 +60,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "snyk": true
 }

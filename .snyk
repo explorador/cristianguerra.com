@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - gatsby-source-contentful > contentful > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-transformer-remark > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-cli > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - node-sass > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - styled-components > babel-plugin-styled-components > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > gatsby-plugin-sharp > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > deep-map > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-cli > gatsby-telemetry > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - sass-extract > query-ast > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > gatsby-plugin-sharp > async > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-cli > yurnalist > inquirer > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > contentful > contentful-sdk-core > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - styled-components > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-source-contentful > contentful > contentful-resolve-response > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - styled-components > babel-plugin-styled-components > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
+    - gatsby-plugin-react-svg > svg-react-loader > xml2js > xmlbuilder > lodash:
+        patched: '2019-10-20T08:19:05.306Z'
