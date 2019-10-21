@@ -34,6 +34,10 @@
     "typeface-inconsolata": "0.0.72"
   },
   "devDependencies": {
+    "babel-plugin-polished": "^1.1.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "gatsby-plugin-polished": "^1.0.4",
+    "gatsby-plugin-styled-components": "^3.1.11",
     "node-normalize-scss": "^8.0.0",
     "prettier": "^1.17.1",
     "sass": "^1.20.3",

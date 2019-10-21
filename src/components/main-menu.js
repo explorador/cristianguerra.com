@@ -37,10 +37,10 @@ const MainMenuWrapper = styled.ul`
 		}
 
 		&:hover {
-			text-shadow: 0 0 12px ${ rgba(`#fff`, .6) };
+			text-shadow: 0 0 12px ${ rgba('#fff', 0.6) };
 
 			svg {
-				filter: drop-shadow(0px 5px 5px rgba(255,255,255,0.4));
+				filter: drop-shadow(0px 5px 5px rgba('#fff', 0.4));
 			}
 		}
 	}
