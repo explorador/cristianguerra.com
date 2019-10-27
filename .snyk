@@ -10,3 +10,23 @@ patch:
         patched: '2019-10-21T08:20:22.404Z'
     - styled-components > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2019-10-21T08:20:22.404Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-10-22T08:19:17.172Z'
