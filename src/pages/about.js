@@ -24,6 +24,8 @@ const SkillsList = styled.ul`
 	list-style: none;
 
 	li {
+		flex-grow: 1;
+		flex-shrink: 0;
 		padding: ${ rem(30) };
 		text-align: center;
 		color: ${ props => props.theme.grayL };
@@ -31,8 +33,7 @@ const SkillsList = styled.ul`
 
 	svg {
 		display: block;
-		height: 100%;
-		max-height: ${ rem(60) };
+		height: ${ rem(60) };
 		margin: 0 auto ${ rem(10) };
 		fill: ${ props => props.theme.grayL };
 	}
